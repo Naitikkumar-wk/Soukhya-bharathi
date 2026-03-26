@@ -568,7 +568,7 @@
     @media (max-width: 1024px) {
       .nav { display: none; }
       .hamburger { display: flex; }
-      .btn { display: none; }
+      .btn:not(.full-btn):not(#toStep2):not(#toStep3):not(#confirmBtn) { display: none; }
       .panel,
       .panel.active { grid-template-columns: 1fr; }
       .footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
