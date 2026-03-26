@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Soukhya Bharathi | Ayurvedic Clinic</title>
+    <style>
+        @font-face {
+            font-family: "MayoClinicSans";
+            src: url("fonts/MayoClinicSans-Regular.woff2") format("woff2");
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: "MayoClinicSans";
+            src: url("fonts/MayoClinicSans-Bold.woff2") format("woff2");
+            font-weight: 700;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: "MayoClinicSerifDisplay";
+            src: url("fonts/MayoClinicSerifDisplay-Light.woff2") format("woff2");
+            font-weight: 300;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: "MayoClinicSerifDisplay";
+            src: url("fonts/MayoClinicSerifDisplay-Bold.woff2") format("woff2");
+            font-weight: 700;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: "MayoClinicSerif";
+            src: url("fonts/MayoClinicSerif-Bold.woff2") format("woff2");
+            font-weight: 700;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        :root {
+            --teal: #1f948e;
+            --deep-blue: #1e3a8a;
+            --heading: #101828;
+            --text: #4a5565;
+            --line: #e5e7eb;
+            --max: 1184px;
+        }
+
+        * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            margin: 0;
+            font-family: "MayoClinicSans", "Helvetica Neue", Arial, sans-serif;
+            color: var(--text);
+            background: #fff;
+            line-height: 1.5;
+        }
+
+        h1, h2, h3, h4, .serif {
+            margin: 0;
+            color: var(--heading);
+            font-family: "MayoClinicSerifDisplay", Georgia, "Times New Roman", serif;
+            font-weight: 300;
+        }
+
+        .container {
+            width: min(var(--max), calc(100% - 48px));
+            margin: 0 auto;
+        }
+
+        .btn {
+            border: 0;
+            border-radius: 999px;
+            padding: 13px 24px;
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: all .2s ease;
+        }
+
+        .btn-primary { background: var(--teal); color: #fff; }
+        .btn-primary:hover { filter: brightness(0.95); }
+        .btn-light { background: #fff; color: #111; border: 1px solid rgba(255,255,255,.35); }
+        .btn-light:hover { background: #f9fafb; }
+
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 20;
+            background: #fff;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .site-header .container {
+            width: min(1560px, calc(100% - 48px));
+        }
+
+        .header-row {
+            height: 88px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            background: var(--teal);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .logo img {
+            width: 88%;
+            height: 88%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .logo-small {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+        }
+
+        .brand-name {
+            font-size: 40px;
+            color: var(--heading);
+            font-family: "MayoClinicSerifDisplay", Georgia, serif;
+            font-weight: 700;
+            letter-spacing: 0.2px;
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            gap: 44px;
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: var(--text);
+            font-size: 14px;
+            font-family: "MayoClinicSans", Arial, sans-serif;
+            font-weight: 400;
+        }
+
+        .header-cta {
+            min-width: 182px;
+            height: 48px;
+            font-size: 14px;
+            padding: 0 24px;
+            font-family: "MayoClinicSans", Arial, sans-serif;
+            font-weight: 700;
+        }
+
+        .hero {
+            min-height: 630px;
+            display: flex;
+            align-items: center;
+            color: #fff;
+            position: relative;
+            background:
+                linear-gradient(179deg, rgba(1, 73, 69, 0.8) 0.49%, rgba(255, 255, 255, 0) 187.51%),
+                linear-gradient(0deg, rgba(0, 0, 0, .26), rgba(0, 0, 0, .26)),
+                url('images/home.jpg') center/cover no-repeat;
+        }
+
+        .hero-content { max-width: 560px; }
+        .eyebrow { font-size: 14px; opacity: .9; }
+        .hero h1 {
+            margin-top: 12px;
+            font-size: clamp(36px, 7vw, 60px);
+            line-height: 1.12;
+            color: #fff;
+            font-family: "MayoClinicSerifDisplay", Georgia, serif;
+            font-weight: 700;
+        }
+        .hero p {
+            margin: 20px 0 30px;
+            max-width: 520px;
+            font-size: 18px;
+            line-height: 1.55;
+            color: rgba(255,255,255,.92);
+        }
+        .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; }
+
+        section { padding: 80px 0; }
+        .section-head { text-align: center; margin-bottom: 44px; }
+        .section-head h2 { font-size: 36px; line-height: 1.1; }
+        .section-head h2 { font-family: "MayoClinicSerifDisplay", Georgia, serif; font-weight: 700; }
+        .section-head p { margin: 12px auto 0; max-width: 640px; }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 24px;
+        }
+
+        .card {
+            border: 1px solid var(--line);
+            border-radius: 14px;
+            background: #fff;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(16, 24, 40, .06);
+        }
+
+        .card img {
+            width: 100%;
+            height: 255px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .card-body { padding: 24px; }
+        .card h3 { font-size: 24px; margin-bottom: 10px; font-family: "MayoClinicSerifDisplay", Georgia, serif; font-weight: 700; }
+        .card p { font-size: 14px; margin: 0 0 18px; }
+
+        .link-arrow {
+            color: var(--deep-blue);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .center-link { text-align: center; margin-top: 18px; }
+        .center-link a { color: var(--deep-blue); text-decoration: none; }
+
+        .article .card {
+            border: 1px solid #fff;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,.1), 0 2px 4px -2px rgba(0,0,0,.1);
+            border-radius: 16px;
+        }
+
+        .article .card img { height: 225px; }
+        .article h3 { font-size: 20px; line-height: 1.35; }
+        .article p { font-size: 16px; line-height: 1.5; }
+
+        .testimonials { padding-top: 44px; }
+        .testimonials .section-head p {
+            font-family: "MayoClinicSerif", Georgia, serif;
+            font-size: 20px;
+            color: #000;
+            margin-top: 2px;
+            font-weight: 700;
+        }
+
+        .review {
+            border-radius: 16px;
+            border: 1px solid #fff;
+            background: rgba(89, 255, 247, 0.03);
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,.1), 0 2px 4px -2px rgba(0,0,0,.1);
+            padding: 30px;
+            min-height: 250px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .stars {
+            color: #fdce37;
+            letter-spacing: 2px;
+            font-size: 24px;
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+
+        .review-name { font-size: 16px; color: #000; font-weight: 700; }
+
+        footer {
+            margin-top: 84px;
+            background: var(--teal);
+            color: rgba(255,255,255,.8);
+            padding: 64px 0 0;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 1fr 1fr 1.1fr;
+            gap: 48px;
+        }
+
+        .footer-title {
+            color: #fff;
+            font-family: "MayoClinicSerif", Georgia, serif;
+            font-size: 16px;
+            margin-bottom: 14px;
+            font-weight: 700;
+        }
+
+        .footer-brand p { margin: 14px 0 18px; font-size: 14px; }
+
+        .socials { display: flex; gap: 10px; }
+        .socials a {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            color: #fff;
+            text-decoration: none;
+            background: rgba(255,255,255,.12);
+        }
+
+        .list { list-style: none; padding: 0; margin: 0; }
+        .list li { margin-bottom: 10px; font-size: 14px; }
+
+        .footer-bottom {
+            margin-top: 30px;
+            border-top: 1px solid rgba(255,255,255,.12);
+            height: 62px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            font-size: 14px;
+            color: rgba(255,255,255,.6);
+        }
+
+        .footer-bottom a {
+            text-decoration: none;
+            color: rgba(255,255,255,.6);
+            margin-left: 24px;
+        }
+
+        @media (max-width: 1024px) {
+            .nav { display: none; }
+            .grid-3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            .footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        }
+
+        @media (max-width: 700px) {
+            .container { width: min(var(--max), calc(100% - 28px)); }
+            .grid-3 { grid-template-columns: 1fr; }
+            .header-row { height: 76px; }
+            .site-header .container { width: min(1560px, calc(100% - 28px)); }
+            .brand-name { font-size: 24px; }
+            .nav a { font-size: 14px; }
+            .header-cta {
+                min-width: 150px;
+                height: 46px;
+                font-size: 14px;
+            }
+            .hero { min-height: 560px; }
+            .section-head h2 { font-size: 30px; }
+            .footer-grid { grid-template-columns: 1fr; gap: 30px; }
+            .footer-bottom {
+                height: auto;
+                padding: 16px 0 20px;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .footer-bottom a { margin: 0 18px 0 0; }
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-row">
+            <a class="brand" href="#">
+                <span class="logo">
+                    <img src="images/image.png" alt="Soukhya Bharathi logo" />
+                </span>
+                <span class="brand-name serif">Soukhya bharathi</span>
+            </a>
+
+            <nav class="nav" aria-label="Main navigation">
+                <a href="about.html">About Us</a>
+                <a href="services.html">Services</a>
+                <a href="blog.html">Blog</a>
+                <a href="contact.html">Contact Us</a>
+            </nav>
+
+            <a class="btn btn-primary header-cta" href="consultation.html">Book Consultation</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero" id="about">
+            <div class="container">
+                <div class="hero-content">
+                    <p class="eyebrow">Authentic Ayurveda Care</p>
+                    <h1>Restore Harmony in<br>Mind, Body &amp; Spirit</h1>
+                    <p>
+                        Experience the ancient wisdom of Ayurveda through personalized consultations,
+                        natural therapies, and holistic wellness practices.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#services" class="btn btn-primary">Start Your Journey</a>
+                        <a href="consultation.html" class="btn btn-light">Book Consultation</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services">
+            <div class="container">
+                <div class="section-head">
+                    <h2>Healing Therapies</h2>
+                    <p>Discover authentic Ayurvedic treatments tailored to your unique constitution and wellness goals.</p>
+                </div>
+
+                <div class="grid-3">
+                    <article class="card">
+                        <img src="images/act1.png" alt="Panchakarma therapy" />
+                        <div class="card-body">
+                            <h3>Panchakarma</h3>
+                            <p>Complete body purification and rejuvenation through five cleansing therapies for deep reset.</p>
+                            <a class="link-arrow" href="#">Learn More →</a>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <img src="images/act2.png" alt="Shirodhara therapy" />
+                        <div class="card-body">
+                            <h3>Shirodhara</h3>
+                            <p>Warm oil therapy that calms the nervous system, sharpens focus, and relieves stress.</p>
+                            <a class="link-arrow" href="#">Learn More →</a>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <img src="images/act3.png" alt="Abhyanga massage" />
+                        <div class="card-body">
+                            <h3>Abhyanga</h3>
+                            <p>Traditional Ayurvedic oil massage designed to improve circulation, vitality, and sleep.</p>
+                            <a class="link-arrow" href="#">Learn More →</a>
+                        </div>
+                    </article>
+                </div>
+
+                <p class="center-link"><a href="#">View more →</a></p>
+            </div>
+        </section>
+
+        <section class="article" id="articles" style="padding-top: 30px;">
+            <div class="container">
+                <div class="section-head">
+                    <h2>Recent Articles</h2>
+                </div>
+
+                <div class="grid-3">
+                    <article class="card">
+                        <img src="https://images.unsplash.com/photo-1514995669114-6081e934b693?auto=format&fit=crop&w=900&q=80" alt="Ayurvedic morning routine" />
+                        <div class="card-body">
+                            <h3>5 Ayurvedic Daily Routines for Better Health</h3>
+                            <p>Learn the ancient practice of Dinacharya and how small morning rituals can improve your energy and balance.</p>
+                            <a class="link-arrow" href="#">Read more →</a>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <img src="https://images.unsplash.com/photo-1490818387583-1baba5e638af?auto=format&fit=crop&w=900&q=80" alt="Ayurvedic ingredients" />
+                        <div class="card-body">
+                            <h3>Healing Foods that Balance Vata, Pitta, Kapha</h3>
+                            <p>Explore practical meal ideas and herbs that support your dosha and help maintain digestive strength.</p>
+                            <a class="link-arrow" href="#">Read more →</a>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <img src="https://images.unsplash.com/photo-1471193945509-9ad0617afabf?auto=format&fit=crop&w=900&q=80" alt="Herbal oils and tea" />
+                        <div class="card-body">
+                            <h3>Natural Detox Rituals You Can Start This Week</h3>
+                            <p>Simple self-care techniques, oiling practices, and breathing exercises for gentle internal cleansing.</p>
+                            <a class="link-arrow" href="#">Read more →</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonials">
+            <div class="container">
+                <div class="section-head">
+                    <h2>Testimonials</h2>
+                    <p>4.5 Rating based on 1560 reviews</p>
+                </div>
+
+                <div class="grid-3">
+                    <article class="review">
+                        <p>
+                            I felt a noticeable improvement in sleep and digestion within two weeks.
+                            The consultation was deeply personalized and practical.
+                        </p>
+                        <div>
+                            <div class="stars">★★★★<span style="color:#d9d9d9;">★</span></div>
+                            <div class="review-name">Aditya R</div>
+                        </div>
+                    </article>
+
+                    <article class="review">
+                        <p>
+                            The therapies were calming and professional. I now follow a daily routine
+                            that reduced stress and improved my focus at work.
+                        </p>
+                        <div>
+                            <div class="stars">★★★★<span style="color:#d9d9d9;">★</span></div>
+                            <div class="review-name">Neha M</div>
+                        </div>
+                    </article>
+
+                    <article class="review">
+                        <p>
+                            Excellent care and very knowledgeable doctors. The Panchakarma program
+                            helped me feel lighter, healthier, and more energetic.
+                        </p>
+                        <div>
+                            <div class="stars">★★★★<span style="color:#d9d9d9;">★</span></div>
+                            <div class="review-name">Rahul K</div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <div class="brand" style="color:#000000;">
+                    <span class="logo logo-small">
+                        <img src="images/image.png" alt="Soukhya Bharathi logo" />
+                    </span>
+                    <span class="brand-name serif" style="color:#fff;font-size:24px;">Soukhya bharathi</span>
+                </div>
+                <p>
+                    Discover the ancient science of life. We provide authentic Ayurvedic
+                    treatments for a balanced and healthy lifestyle.
+                </p>
+                <div class="socials" aria-label="social links">
+                    <a href="#" aria-label="Twitter">𝕏</a>
+                    <a href="#" aria-label="Instagram">◉</a>
+                    <a href="#" aria-label="YouTube">▶</a>
+                </div>
+            </div>
+
+            <div>
+                <h4 class="footer-title">Quick Links</h4>
+                <ul class="list">
+                    <li>Home</li>
+                    <li>About Us</li>
+                    <li>Services</li>
+                    <li><a href="blog.html" style="color:inherit;text-decoration:none;">Blog</a></li>
+                    <li><a href="contact.html" style="color:inherit;text-decoration:none;">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="footer-title">Treatments</h4>
+                <ul class="list">
+                    <li>Panchakarma</li>
+                    <li>Shirodhara</li>
+                    <li>Abhyanga Massage</li>
+                    <li>Herbal Therapy</li>
+                    <li>Yoga &amp; Meditation</li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="footer-title">Visit Us</h4>
+                <ul class="list">
+                    <li>📍 108 Lotus Valley Road, Kerala, India 682001</li>
+                    <li>📞 +91 98765 43210</li>
+                    <li>✉ namaste@ayurveda.wellness</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="container footer-bottom">
+            <span>© 2026 Ayurveda Wellness. All rights reserved.</span>
+            <div>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

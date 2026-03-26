@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book Consultation | Soukhya Bharathi</title>
+  <style>
+    @font-face {
+      font-family: "MayoClinicSans";
+      src: url("fonts/MayoClinicSans-Regular.woff2") format("woff2");
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: "MayoClinicSans";
+      src: url("fonts/MayoClinicSans-Bold.woff2") format("woff2");
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: "MayoClinicSerifDisplay";
+      src: url("fonts/MayoClinicSerifDisplay-Bold.woff2") format("woff2");
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: "MayoClinicSerif";
+      src: url("fonts/MayoClinicSerif-Bold.woff2") format("woff2");
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    :root {
+      --teal: #1f948e;
+      --heading: #101828;
+      --text: #4a5565;
+      --line: #e5e7eb;
+      --bg: #f4f5f7;
+      --max: 1184px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "MayoClinicSans", Arial, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.45;
+    }
+
+    h1, h2, h3, .serif {
+      margin: 0;
+      color: var(--heading);
+      font-family: "MayoClinicSerifDisplay", Georgia, serif;
+      font-weight: 700;
+    }
+
+    .container {
+      width: min(var(--max), calc(100% - 48px));
+      margin: 0 auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: #fff;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .site-header .container {
+      width: min(1560px, calc(100% - 48px));
+    }
+
+    .header-row {
+      height: 88px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .logo {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: var(--teal);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .logo img {
+      width: 88%;
+      height: 88%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .logo-small {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+    }
+
+    .brand-name {
+      font-size: 24px;
+      color: var(--heading);
+      font-family: "MayoClinicSerifDisplay", Georgia, serif;
+      font-weight: 700;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 44px;
+    }
+
+    .nav a {
+      text-decoration: none;
+      color: var(--text);
+      font-size: 14px;
+    }
+
+    .btn {
+      border: 0;
+      border-radius: 999px;
+      min-width: 182px;
+      height: 48px;
+      font-size: 14px;
+      padding: 0 24px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-family: "MayoClinicSans", Arial, sans-serif;
+      font-weight: 700;
+      background: var(--teal);
+      color: #fff;
+    }
+
+    .page {
+      padding: 26px 0 48px;
+    }
+
+    .top-back {
+      font-size: 13px;
+      color: #6b7280;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .page-title {
+      font-size: 46px;
+      margin-bottom: 18px;
+    }
+
+    .stepper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+      border-top: 1px solid #e8ebf0;
+      border-bottom: 1px solid #e8ebf0;
+      padding: 18px 0;
+      margin-bottom: 18px;
+    }
+
+    .step {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #8a94a5;
+      font-size: 13px;
+    }
+
+    .step .dot {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      border: 1px solid #ced4dd;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      background: #fff;
+    }
+
+    .step.active,
+    .step.done {
+      color: var(--teal);
+    }
+
+    .step.active .dot,
+    .step.done .dot {
+      background: var(--teal);
+      border-color: var(--teal);
+      color: #fff;
+    }
+
+    .step-line {
+      width: 70px;
+      height: 2px;
+      background: #d7dce3;
+      margin: 0 10px;
+    }
+
+    .step-line.done {
+      background: var(--teal);
+    }
+
+    .content-box {
+      border-top: 1px solid #eceff3;
+      padding-top: 14px;
+    }
+
+    .change-link {
+      font-size: 12px;
+      color: #6b7280;
+      margin-bottom: 10px;
+      display: inline-flex;
+      text-decoration: none;
+    }
+
+    .panel {
+      display: none;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .panel.active {
+      display: grid;
+    }
+
+    .card {
+      background: #f6f7f9;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      padding: 14px;
+    }
+
+    .card h3 {
+      font-size: 16px;
+      margin-bottom: 12px;
+    }
+
+    /* step 1 */
+    .service-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .service-item {
+      border: 1px solid #d7dce3;
+      border-radius: 8px;
+      background: #fff;
+      padding: 12px;
+      font-size: 13px;
+      cursor: pointer;
+      transition: .2s;
+    }
+
+    .service-item.selected {
+      border-color: var(--teal);
+      box-shadow: 0 0 0 2px rgba(31,148,142,.12);
+      background: #f8fffe;
+    }
+
+    .service-item strong {
+      display: block;
+      color: #1f2937;
+      margin-bottom: 4px;
+      font-size: 14px;
+    }
+
+    .single-action {
+      margin-top: 14px;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    /* step 2 */
+    .calendar {
+      text-align: center;
+      background: #fff;
+      border: 1px solid #e2e6ed;
+      border-radius: 8px;
+      padding: 10px;
+    }
+
+    .cal-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 8px;
+      font-size: 13px;
+      color: #1f2937;
+    }
+
+    .cal-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 6px;
+      font-size: 11px;
+      color: #6b7280;
+    }
+
+    .cal-day {
+      padding: 6px 0;
+      border-radius: 999px;
+      cursor: pointer;
+    }
+
+    .cal-day.active {
+      background: var(--teal);
+      color: #fff;
+      font-weight: 700;
+    }
+
+    .slots {
+      background: #fff;
+      border: 1px solid #e2e6ed;
+      border-radius: 8px;
+      padding: 10px;
+    }
+
+    .slot-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+    }
+
+    .slot {
+      border: 1px solid #d7dce3;
+      border-radius: 999px;
+      height: 34px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      color: #374151;
+      background: #fff;
+      cursor: pointer;
+    }
+
+    .slot.active {
+      background: var(--teal);
+      border-color: var(--teal);
+      color: #fff;
+      font-weight: 700;
+    }
+
+    .full-btn {
+      margin-top: 12px;
+      width: 100%;
+      min-width: 0;
+      height: 42px;
+      font-size: 13px;
+    }
+
+    /* step 3 */
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+
+    .field label {
+      display: block;
+      font-size: 12px;
+      color: #1f2937;
+      margin-bottom: 6px;
+    }
+
+    .field input,
+    .field textarea,
+    .select {
+      width: 100%;
+      border: 1px solid #d7dce3;
+      border-radius: 6px;
+      height: 38px;
+      padding: 0 10px;
+      font-size: 12px;
+      font-family: inherit;
+      background: #fff;
+    }
+
+    .field textarea {
+      height: 48px;
+      padding: 10px;
+      resize: vertical;
+    }
+
+    .radio-box {
+      border: 1px solid #19a7a0;
+      border-radius: 6px;
+      background: #f7fffd;
+      padding: 8px 10px;
+      font-size: 12px;
+      color: #374151;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .summary {
+      background: #f5f6f8;
+      border: 1px solid #e2e6ed;
+      border-radius: 8px;
+      padding: 14px;
+      font-size: 13px;
+      line-height: 1.65;
+    }
+
+    .summary strong { color: #111827; display: block; margin-top: 8px; }
+
+    footer {
+      background: var(--teal);
+      color: rgba(255,255,255,.8);
+      padding: 56px 0 0;
+      margin-top: 40px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr 1fr 1.1fr;
+      gap: 40px;
+    }
+
+    .footer-title {
+      color: #fff;
+      font-family: "MayoClinicSerif", Georgia, serif;
+      font-size: 16px;
+      margin-bottom: 12px;
+      font-weight: 700;
+    }
+
+    .footer-brand p { margin: 12px 0 16px; font-size: 14px; }
+
+    .socials { display: flex; gap: 10px; }
+    .socials a {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      text-decoration: none;
+      background: rgba(255,255,255,.12);
+    }
+
+    .list { list-style: none; padding: 0; margin: 0; }
+    .list li { margin-bottom: 10px; font-size: 14px; }
+
+    .footer-bottom {
+      margin-top: 30px;
+      border-top: 1px solid rgba(255,255,255,.12);
+      min-height: 62px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      font-size: 14px;
+      color: rgba(255,255,255,.6);
+      padding: 10px 0;
+    }
+
+    .footer-bottom a {
+      color: rgba(255,255,255,.6);
+      text-decoration: none;
+      margin-left: 22px;
+    }
+
+    @media (max-width: 1024px) {
+      .nav { display: none; }
+      .panel,
+      .panel.active { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 700px) {
+      .container { width: min(var(--max), calc(100% - 28px)); }
+      .site-header .container { width: min(1560px, calc(100% - 28px)); }
+      .header-row { height: 74px; }
+      .brand-name { font-size: 22px; }
+      .btn { min-width: 148px; height: 42px; font-size: 13px; }
+      .page-title { font-size: 34px; }
+      .step-line { width: 30px; }
+      .step { font-size: 11px; }
+      .slot-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .footer-bottom a { margin: 0 16px 0 0; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-row">
+      <a class="brand" href="index.html">
+        <span class="logo">
+          <img src="images/image.png" alt="Soukhya Bharathi logo" />
+        </span>
+        <span class="brand-name serif">Soukhya bharathi</span>
+      </a>
+
+      <nav class="nav" aria-label="Main navigation">
+        <a href="about.html">About Us</a>
+        <a href="services.html">Services</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact Us</a>
+      </nav>
+
+      <a class="btn" href="consultation.html">Book Consultation</a>
+    </div>
+  </header>
+
+  <main class="page">
+    <div class="container">
+      <a class="top-back" href="index.html">← Back to Home</a>
+      <h1 class="page-title">Book Consultation</h1>
+
+      <div class="stepper">
+        <div id="stepMark1" class="step active"><span class="dot">1</span>Service</div>
+        <div id="line1" class="step-line"></div>
+        <div id="stepMark2" class="step"><span class="dot">2</span>Date &amp; Time</div>
+        <div id="line2" class="step-line"></div>
+        <div id="stepMark3" class="step"><span class="dot">3</span>Details</div>
+      </div>
+
+      <div class="content-box">
+        <a id="changeLink" class="change-link" href="#">+ Change Service</a>
+
+        <section id="panel1" class="panel active">
+          <div class="card">
+            <h3>Select Service</h3>
+            <div class="service-grid" id="serviceGrid">
+              <div class="service-item selected" data-service="Digestive Health & Detox Wellness">
+                <strong>Digestive Health & Detox Wellness</strong>
+                Panchakarma and gut-balance therapies.
+              </div>
+              <div class="service-item" data-service="Stress Relief & Sleep Restoration">
+                <strong>Stress Relief & Sleep Restoration</strong>
+                Shirodhara and calming treatments.
+              </div>
+              <div class="service-item" data-service="Pain Management">
+                <strong>Pain Management</strong>
+                Abhyanga and localized therapy care.
+              </div>
+              <div class="service-item" data-service="Women’s Wellness">
+                <strong>Women’s Wellness</strong>
+                Customized Ayurvedic support programs.
+              </div>
+            </div>
+            <div class="single-action">
+              <button id="toStep2" class="btn">Continue to Date &amp; Time</button>
+            </div>
+          </div>
+          <div class="card">
+            <h3>What to expect</h3>
+            <p style="margin:0;font-size:13px;line-height:1.6;">
+              Your first consultation includes detailed history taking, pulse and dosha assessment,
+              and a personalized treatment recommendation with lifestyle and diet guidance.
+            </p>
+          </div>
+        </section>
+
+        <section id="panel2" class="panel">
+          <div class="card">
+            <div class="calendar">
+              <div class="cal-head">
+                <span>‹</span>
+                <strong>March 2026</strong>
+                <span>›</span>
+              </div>
+              <div class="cal-grid" style="font-weight:700;color:#6b7280;">
+                <span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span>
+              </div>
+              <div class="cal-grid" style="margin-top:4px;">
+                <span></span><span></span><span></span><span></span><span></span><span></span><span class="cal-day">1</span>
+                <span class="cal-day">2</span><span class="cal-day">3</span><span class="cal-day">4</span><span class="cal-day">5</span><span class="cal-day">6</span><span class="cal-day">7</span><span class="cal-day">8</span>
+                <span class="cal-day">9</span><span class="cal-day">10</span><span class="cal-day">11</span><span class="cal-day">12</span><span class="cal-day">13</span><span class="cal-day">14</span><span class="cal-day">15</span>
+                <span class="cal-day">16</span><span class="cal-day">17</span><span class="cal-day">18</span><span class="cal-day">19</span><span class="cal-day">20</span><span class="cal-day">21</span><span class="cal-day">22</span>
+                <span class="cal-day">23</span><span class="cal-day">24</span><span class="cal-day">25</span><span class="cal-day">26</span><span class="cal-day active" data-date="Thursday, March 26, 2026">27</span><span class="cal-day">28</span><span class="cal-day">29</span>
+                <span class="cal-day">30</span><span class="cal-day">31</span><span></span><span></span><span></span><span></span><span></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="slots">
+              <div class="slot-grid" id="slotGrid">
+                <button class="slot" type="button">08:00 AM</button>
+                <button class="slot" type="button">08:30 AM</button>
+                <button class="slot" type="button">10:30 AM</button>
+                <button class="slot" type="button">10:30 AM</button>
+                <button class="slot" type="button">11:00 AM</button>
+                <button class="slot" type="button">11:30 AM</button>
+                <button class="slot" type="button">12:00 PM</button>
+                <button class="slot active" type="button">02:00 PM</button>
+                <button class="slot" type="button">02:30 PM</button>
+                <button class="slot" type="button">03:00 PM</button>
+                <button class="slot" type="button">03:30 PM</button>
+                <button class="slot" type="button">04:00 PM</button>
+                <button class="slot" type="button">04:30 PM</button>
+                <button class="slot" type="button">05:00 PM</button>
+              </div>
+              <button id="toStep3" class="btn full-btn">Continue to Details</button>
+            </div>
+          </div>
+        </section>
+
+        <section id="panel3" class="panel">
+          <div class="card">
+            <h3>Patient Details</h3>
+            <div class="form-grid">
+              <div class="field">
+                <label>Full Name</label>
+                <input type="text" id="fullName" placeholder="" />
+              </div>
+              <div class="field" style="display:grid;grid-template-columns:2fr 1fr;gap:8px;">
+                <div>
+                  <label>Email Address</label>
+                  <input type="email" id="emailAddr" placeholder="" />
+                </div>
+                <div>
+                  <label>&nbsp;</label>
+                  <input type="text" value="+1 234 567 8900" />
+                </div>
+              </div>
+              <div class="field">
+                <label>Consultation Type</label>
+                <div class="radio-box">◉ In-person Clinic Visit</div>
+              </div>
+              <div class="field">
+                <textarea id="notes" placeholder="Briefly describe what you'd like to discuss..."></textarea>
+              </div>
+              <button id="confirmBtn" class="btn full-btn">Confirm Booking</button>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="summary">
+              <strong>Service</strong>
+              <span id="sumService">Digestive Health &amp; Detox Wellness</span>
+
+              <strong>Date</strong>
+              <span id="sumDate">Thursday, March 26, 2026</span>
+
+              <strong>Time</strong>
+              <span id="sumTime">02:00 PM</span>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <div class="brand" style="color:#fff;">
+          <span class="logo logo-small">
+            <img src="images/image.png" alt="Soukhya Bharathi logo" />
+          </span>
+          <span class="brand-name serif" style="color:#fff;font-size:24px;">Soukhya bharathi</span>
+        </div>
+        <p>
+          Discover the ancient science of life. We provide authentic Ayurvedic
+          treatments for a balanced and healthy lifestyle.
+        </p>
+        <div class="socials">
+          <a href="#" aria-label="Twitter">𝕏</a>
+          <a href="#" aria-label="Instagram">◉</a>
+          <a href="#" aria-label="YouTube">▶</a>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="footer-title">Quick Links</h4>
+        <ul class="list">
+          <li><a href="index.html" style="color:inherit;text-decoration:none;">Home</a></li>
+          <li><a href="about.html" style="color:inherit;text-decoration:none;">About Us</a></li>
+          <li><a href="services.html" style="color:inherit;text-decoration:none;">Services</a></li>
+          <li><a href="blog.html" style="color:inherit;text-decoration:none;">Blog</a></li>
+          <li><a href="contact.html" style="color:inherit;text-decoration:none;">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-title">Treatments</h4>
+        <ul class="list">
+          <li>Panchakarma</li>
+          <li>Shirodhara</li>
+          <li>Abhyanga Massage</li>
+          <li>Herbal Therapy</li>
+          <li>Yoga &amp; Meditation</li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-title">Visit Us</h4>
+        <ul class="list">
+          <li>📍 108 Lotus Valley Road, Kerala, India 682001</li>
+          <li>📞 +91 98765 43210</li>
+          <li>✉ namaste@ayurveda.wellness</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <span>© 2026 Ayurveda Wellness. All rights reserved.</span>
+      <div>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const state = {
+      service: 'Digestive Health & Detox Wellness',
+      date: 'Thursday, March 26, 2026',
+      time: '02:00 PM',
+      step: 1
+    };
+
+    const panel1 = document.getElementById('panel1');
+    const panel2 = document.getElementById('panel2');
+    const panel3 = document.getElementById('panel3');
+
+    const step1 = document.getElementById('stepMark1');
+    const step2 = document.getElementById('stepMark2');
+    const step3 = document.getElementById('stepMark3');
+    const line1 = document.getElementById('line1');
+    const line2 = document.getElementById('line2');
+    const changeLink = document.getElementById('changeLink');
+
+    const sumService = document.getElementById('sumService');
+    const sumDate = document.getElementById('sumDate');
+    const sumTime = document.getElementById('sumTime');
+
+    function renderSteps() {
+      [step1, step2, step3].forEach((el) => {
+        el.classList.remove('active', 'done');
+        el.querySelector('.dot').textContent = el === step1 ? '1' : el === step2 ? '2' : '3';
+      });
+      line1.classList.remove('done');
+      line2.classList.remove('done');
+
+      if (state.step === 1) {
+        step1.classList.add('active');
+      }
+      if (state.step === 2) {
+        step1.classList.add('done');
+        step1.querySelector('.dot').textContent = '✓';
+        step2.classList.add('active');
+        line1.classList.add('done');
+      }
+      if (state.step === 3) {
+        step1.classList.add('done');
+        step2.classList.add('done');
+        step1.querySelector('.dot').textContent = '✓';
+        step2.querySelector('.dot').textContent = '✓';
+        step3.classList.add('active');
+        line1.classList.add('done');
+        line2.classList.add('done');
+      }
+
+      panel1.classList.toggle('active', state.step === 1);
+      panel2.classList.toggle('active', state.step === 2);
+      panel3.classList.toggle('active', state.step === 3);
+
+      changeLink.textContent = state.step === 3 ? '+ Change Date/Time' : '+ Change Service';
+
+      sumService.textContent = state.service;
+      sumDate.textContent = state.date;
+      sumTime.textContent = state.time;
+    }
+
+    document.getElementById('toStep2').addEventListener('click', () => {
+      state.step = 2;
+      renderSteps();
+    });
+
+    document.getElementById('toStep3').addEventListener('click', () => {
+      state.step = 3;
+      renderSteps();
+    });
+
+    changeLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      state.step = state.step === 3 ? 2 : 1;
+      renderSteps();
+    });
+
+    document.getElementById('serviceGrid').addEventListener('click', (e) => {
+      const card = e.target.closest('.service-item');
+      if (!card) return;
+      document.querySelectorAll('.service-item').forEach((i) => i.classList.remove('selected'));
+      card.classList.add('selected');
+      state.service = card.dataset.service;
+      renderSteps();
+    });
+
+    document.getElementById('slotGrid').addEventListener('click', (e) => {
+      const slot = e.target.closest('.slot');
+      if (!slot) return;
+      document.querySelectorAll('.slot').forEach((s) => s.classList.remove('active'));
+      slot.classList.add('active');
+      state.time = slot.textContent.trim();
+      renderSteps();
+    });
+
+    document.querySelectorAll('.cal-day[data-date]').forEach((d) => {
+      d.addEventListener('click', () => {
+        document.querySelectorAll('.cal-day[data-date]').forEach((x) => x.classList.remove('active'));
+        d.classList.add('active');
+        state.date = d.dataset.date;
+        renderSteps();
+      });
+    });
+
+    document.getElementById('confirmBtn').addEventListener('click', () => {
+      const fullName = document.getElementById('fullName').value.trim();
+      const email = document.getElementById('emailAddr').value.trim();
+
+      if (!fullName || !email) {
+        alert('Please fill in all required fields');
+        return;
+      }
+
+      // Save booking data to sessionStorage
+      sessionStorage.setItem('bookingData', JSON.stringify({
+        service: state.service,
+        date: state.date,
+        time: state.time,
+        name: fullName,
+        email: email
+      }));
+
+      // Redirect to confirmation page
+      window.location.href = 'confirmation.html';
+    });
+
+    renderSteps();
+  </script>
+</body>
+</html>

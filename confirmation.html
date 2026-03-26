@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Booking Confirmed | Soukhya Bharathi</title>
+  <style>
+    @font-face {
+      font-family: "MayoClinicSans";
+      src: url("fonts/MayoClinicSans-Regular.woff2") format("woff2");
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: "MayoClinicSans";
+      src: url("fonts/MayoClinicSans-Bold.woff2") format("woff2");
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: "MayoClinicSerifDisplay";
+      src: url("fonts/MayoClinicSerifDisplay-Bold.woff2") format("woff2");
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: "MayoClinicSerif";
+      src: url("fonts/MayoClinicSerif-Bold.woff2") format("woff2");
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    :root {
+      --teal: #1f948e;
+      --heading: #101828;
+      --text: #4a5565;
+      --line: #e5e7eb;
+      --bg: #f4f5f7;
+      --max: 1184px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "MayoClinicSans", Arial, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.45;
+    }
+
+    h1, h2, h3, .serif {
+      margin: 0;
+      color: var(--heading);
+      font-family: "MayoClinicSerifDisplay", Georgia, serif;
+      font-weight: 700;
+    }
+
+    .container {
+      width: min(var(--max), calc(100% - 48px));
+      margin: 0 auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: #fff;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .site-header .container {
+      width: min(1560px, calc(100% - 48px));
+    }
+
+    .header-row {
+      height: 88px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .logo {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: var(--teal);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .logo img {
+      width: 88%;
+      height: 88%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .logo-small {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+    }
+
+    .brand-name {
+      font-size: 24px;
+      color: var(--heading);
+      font-family: "MayoClinicSerifDisplay", Georgia, serif;
+      font-weight: 700;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 44px;
+    }
+
+    .nav a {
+      text-decoration: none;
+      color: var(--text);
+      font-size: 14px;
+    }
+
+    .btn {
+      border: 0;
+      border-radius: 999px;
+      min-width: 182px;
+      height: 48px;
+      font-size: 14px;
+      padding: 0 24px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-family: "MayoClinicSans", Arial, sans-serif;
+      font-weight: 700;
+      background: var(--teal);
+      color: #fff;
+    }
+
+    .page {
+      padding: 40px 0 48px;
+    }
+
+    .confirmation-wrapper {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .checkmark {
+      width: 100px;
+      height: 100px;
+      background: #d4f8f5;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+      font-size: 48px;
+    }
+
+    .conf-title {
+      font-size: 42px;
+      text-align: center;
+      margin-bottom: 10px;
+      color: var(--heading);
+    }
+
+    .conf-subtitle {
+      font-size: 16px;
+      color: #6b7280;
+      text-align: center;
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
+
+    .details-box {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+
+    .detail-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 18px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid #f0f1f3;
+    }
+
+    .detail-row:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+
+    .detail-label {
+      font-size: 12px;
+      color: #6b7280;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-weight: 700;
+    }
+
+    .detail-value {
+      font-size: 14px;
+      color: var(--heading);
+      font-weight: 600;
+      text-align: right;
+    }
+
+    .confirmation-number {
+      background: #f0fffe;
+      border: 1px solid #a7e9e3;
+      border-radius: 8px;
+      padding: 16px;
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    .conf-label {
+      font-size: 11px;
+      color: #6b7280;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+      letter-spacing: 0.5px;
+    }
+
+    .conf-number {
+      font-size: 18px;
+      font-family: monospace;
+      color: var(--teal);
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .next-steps {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 24px;
+    }
+
+    .next-steps h3 {
+      font-size: 14px;
+      margin-bottom: 12px;
+      color: var(--heading);
+    }
+
+    .steps-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .steps-list li {
+      font-size: 13px;
+      color: #4a5565;
+      margin-bottom: 10px;
+      padding-left: 20px;
+      position: relative;
+      line-height: 1.6;
+    }
+
+    .steps-list li:before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--teal);
+      font-weight: 700;
+    }
+
+    .cta-section {
+      display: flex;
+      gap: 12px;
+      flex-direction: column;
+    }
+
+    .btn-primary {
+      background: var(--teal);
+      color: #fff;
+    }
+
+    .btn-secondary {
+      background: #f0f1f3;
+      color: var(--heading);
+      border: 1px solid var(--line);
+    }
+
+    .btn-secondary:hover {
+      background: #e5e7eb;
+    }
+
+    footer {
+      background: var(--teal);
+      color: rgba(255,255,255,.8);
+      padding: 56px 0 0;
+      margin-top: 40px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr 1fr 1.1fr;
+      gap: 40px;
+    }
+
+    .footer-title {
+      color: #fff;
+      font-family: "MayoClinicSerif", Georgia, serif;
+      font-size: 16px;
+      margin-bottom: 12px;
+      font-weight: 700;
+    }
+
+    .footer-brand p { margin: 12px 0 16px; font-size: 14px; }
+
+    .socials { display: flex; gap: 10px; }
+    .socials a {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      text-decoration: none;
+      background: rgba(255,255,255,.12);
+    }
+
+    .list { list-style: none; padding: 0; margin: 0; }
+    .list li { margin-bottom: 10px; font-size: 14px; }
+
+    .footer-bottom {
+      margin-top: 30px;
+      border-top: 1px solid rgba(255,255,255,.12);
+      min-height: 62px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      font-size: 14px;
+      color: rgba(255,255,255,.6);
+      padding: 10px 0;
+    }
+
+    .footer-bottom a {
+      color: rgba(255,255,255,.6);
+      text-decoration: none;
+      margin-left: 22px;
+    }
+
+    @media (max-width: 1024px) {
+      .nav { display: none; }
+      .footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 700px) {
+      .container { width: min(var(--max), calc(100% - 28px)); }
+      .site-header .container { width: min(1560px, calc(100% - 28px)); }
+      .header-row { height: 74px; }
+      .brand-name { font-size: 22px; }
+      .btn { min-width: 148px; height: 42px; font-size: 13px; }
+      .conf-title { font-size: 32px; }
+      .cta-section { flex-direction: column; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .footer-bottom a { margin: 0 16px 0 0; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-row">
+      <a class="brand" href="index.html">
+        <span class="logo">
+          <img src="images/image.png" alt="Soukhya Bharathi logo" />
+        </span>
+        <span class="brand-name serif">Soukhya bharathi</span>
+      </a>
+
+      <nav class="nav" aria-label="Main navigation">
+        <a href="about.html">About Us</a>
+        <a href="services.html">Services</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact Us</a>
+      </nav>
+
+      <a class="btn" href="consultation.html">Book Consultation</a>
+    </div>
+  </header>
+
+  <main class="page">
+    <div class="container">
+      <div class="confirmation-wrapper">
+        <div class="checkmark">✓</div>
+        <h1 class="conf-title">Booking Confirmed!</h1>
+        <p class="conf-subtitle">
+          Thank you for scheduling your consultation. We've sent a confirmation email with all the details. Our team will prepare a personalized wellness plan for you.
+        </p>
+
+        <div class="confirmation-number">
+          <div class="conf-label">Booking Reference</div>
+          <div class="conf-number">SB-20260326-4782</div>
+        </div>
+
+        <div class="details-box">
+          <div class="detail-row">
+            <span class="detail-label">Service</span>
+            <span class="detail-value" id="confService">Digestive Health & Detox Wellness</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">Date</span>
+            <span class="detail-value" id="confDate">Thursday, March 26, 2026</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">Time</span>
+            <span class="detail-value" id="confTime">02:00 PM</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">Location</span>
+            <span class="detail-value">108 Lotus Valley Road, Kerala, India</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">Duration</span>
+            <span class="detail-value">60 minutes</span>
+          </div>
+        </div>
+
+        <div class="next-steps">
+          <h3>What to Expect</h3>
+          <ul class="steps-list">
+            <li>Complete health questionnaire at least 24 hours before your appointment</li>
+            <li>Our Ayurvedic practitioner will assess your current state of health</li>
+            <li>Receive a personalized treatment plan and lifestyle recommendations</li>
+            <li>Book your first treatment session if desired</li>
+          </ul>
+        </div>
+
+        <div class="next-steps">
+          <h3>Important Information</h3>
+          <ul class="steps-list">
+            <li>Please arrive 10 minutes early to complete check-in</li>
+            <li>Wear comfortable, loose-fitting clothing</li>
+            <li>Avoid heavy meals 2 hours before your appointment</li>
+            <li>Contact us at +91 98765 43210 if you need to reschedule</li>
+          </ul>
+        </div>
+
+        <div class="cta-section">
+          <a href="index.html" class="btn btn-primary">Back to Home</a>
+          <a href="services.html" class="btn btn-secondary">Explore Treatments</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <div class="brand" style="color:#fff;">
+          <span class="logo logo-small">
+            <img src="images/image.png" alt="Soukhya Bharathi logo" />
+          </span>
+          <span class="brand-name serif" style="color:#fff;font-size:24px;">Soukhya bharathi</span>
+        </div>
+        <p>
+          Discover the ancient science of life. We provide authentic Ayurvedic
+          treatments for a balanced and healthy lifestyle.
+        </p>
+        <div class="socials">
+          <a href="#" aria-label="Twitter">𝕏</a>
+          <a href="#" aria-label="Instagram">◉</a>
+          <a href="#" aria-label="YouTube">▶</a>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="footer-title">Quick Links</h4>
+        <ul class="list">
+          <li><a href="index.html" style="color:inherit;text-decoration:none;">Home</a></li>
+          <li><a href="about.html" style="color:inherit;text-decoration:none;">About Us</a></li>
+          <li><a href="services.html" style="color:inherit;text-decoration:none;">Services</a></li>
+          <li><a href="blog.html" style="color:inherit;text-decoration:none;">Blog</a></li>
+          <li><a href="contact.html" style="color:inherit;text-decoration:none;">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-title">Treatments</h4>
+        <ul class="list">
+          <li>Panchakarma</li>
+          <li>Shirodhara</li>
+          <li>Abhyanga Massage</li>
+          <li>Herbal Therapy</li>
+          <li>Yoga &amp; Meditation</li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-title">Visit Us</h4>
+        <ul class="list">
+          <li>📍 108 Lotus Valley Road, Kerala, India 682001</li>
+          <li>📞 +91 98765 43210</li>
+          <li>✉ namaste@ayurveda.wellness</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <span>© 2026 Ayurveda Wellness. All rights reserved.</span>
+      <div>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Retrieve booking data from sessionStorage (set by consultation page)
+    const bookingData = JSON.parse(sessionStorage.getItem('bookingData') || '{}');
+    
+    if (bookingData.service) {
+      document.getElementById('confService').textContent = bookingData.service;
+    }
+    if (bookingData.date) {
+      document.getElementById('confDate').textContent = bookingData.date;
+    }
+    if (bookingData.time) {
+      document.getElementById('confTime').textContent = bookingData.time;
+    }
+
+    // Clear sessionStorage after displaying
+    sessionStorage.removeItem('bookingData');
+  </script>
+</body>
+</html>

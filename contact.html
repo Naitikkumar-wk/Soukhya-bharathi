@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us | Soukhya Bharathi</title>
+  <style>
+    @font-face {
+      font-family: "MayoClinicSans";
+      src: url("fonts/MayoClinicSans-Regular.woff2") format("woff2");
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: "MayoClinicSans";
+      src: url("fonts/MayoClinicSans-Bold.woff2") format("woff2");
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: "MayoClinicSerifDisplay";
+      src: url("fonts/MayoClinicSerifDisplay-Light.woff2") format("woff2");
+      font-weight: 300;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: "MayoClinicSerifDisplay";
+      src: url("fonts/MayoClinicSerifDisplay-Bold.woff2") format("woff2");
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: "MayoClinicSerif";
+      src: url("fonts/MayoClinicSerif-Bold.woff2") format("woff2");
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    :root {
+      --teal: #1f948e;
+      --heading: #101828;
+      --text: #4a5565;
+      --line: #e5e7eb;
+      --max: 1184px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "MayoClinicSans", Arial, sans-serif;
+      color: var(--text);
+      background: #f4f4f5;
+      line-height: 1.5;
+    }
+
+    h1, h2, h3, h4, .serif {
+      margin: 0;
+      color: var(--heading);
+      font-family: "MayoClinicSerifDisplay", Georgia, "Times New Roman", serif;
+      font-weight: 700;
+    }
+
+    .container {
+      width: min(1184px, calc(100% - 48px));
+      margin: 0 auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: #fff;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .site-header .container {
+      width: min(1560px, calc(100% - 48px));
+    }
+
+    .header-row {
+      height: 88px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .logo {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: var(--teal);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .logo img {
+      width: 88%;
+      height: 88%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .logo-small {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+    }
+
+    .brand-name {
+      font-size: 24px;
+      color: var(--heading);
+      font-family: "MayoClinicSerifDisplay", Georgia, serif;
+      font-weight: 700;
+      letter-spacing: 0.2px;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 44px;
+    }
+
+    .nav a {
+      text-decoration: none;
+      color: var(--text);
+      font-size: 14px;
+      font-weight: 400;
+    }
+
+    .btn {
+      border: 0;
+      border-radius: 999px;
+      min-width: 182px;
+      height: 48px;
+      font-size: 14px;
+      padding: 0 24px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-family: "MayoClinicSans", Arial, sans-serif;
+      font-weight: 700;
+      background: var(--teal);
+      color: #fff;
+    }
+
+    .page {
+      padding: 28px 0 56px;
+    }
+
+    .contact-card {
+      background: #f4f4f5;
+      border: 1px solid #eceff3;
+      border-radius: 6px;
+      padding: 20px;
+    }
+
+    .page h1 {
+      font-size: 44px;
+      margin-bottom: 8px;
+    }
+
+    .subhead {
+      margin: 0 0 6px;
+      color: #1f2937;
+      font-size: 26px;
+      font-family: "MayoClinicSerifDisplay", Georgia, serif;
+    }
+
+    .muted {
+      margin: 0 0 4px;
+      font-size: 13px;
+      color: #6b7280;
+    }
+
+    .section-title {
+      margin-top: 16px;
+      font-size: 34px;
+      color: #111827;
+    }
+
+    .address {
+      margin: 6px 0 10px;
+      font-size: 13px;
+      color: #3f4a5c;
+      line-height: 1.45;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+      background: transparent;
+      margin-bottom: 20px;
+    }
+
+    th, td {
+      border-top: 1px solid #d7dbe2;
+      padding: 7px 6px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      color: #111827;
+      font-weight: 700;
+      font-size: 12px;
+    }
+
+    .dept-table td:first-child {
+      width: 38%;
+    }
+
+    .notes {
+      color: #5a6476;
+      font-size: 12px;
+      line-height: 1.4;
+    }
+
+    footer {
+      background: var(--teal);
+      color: rgba(255,255,255,.8);
+      padding: 56px 0 0;
+      margin-top: 36px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr 1fr 1.1fr;
+      gap: 40px;
+    }
+
+    .footer-title {
+      color: #fff;
+      font-family: "MayoClinicSerif", Georgia, serif;
+      font-size: 16px;
+      margin-bottom: 12px;
+      font-weight: 700;
+    }
+
+    .footer-brand p { margin: 12px 0 16px; font-size: 14px; }
+
+    .socials { display: flex; gap: 10px; }
+    .socials a {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      text-decoration: none;
+      background: rgba(255,255,255,.12);
+    }
+
+    .list { list-style: none; padding: 0; margin: 0; }
+    .list li { margin-bottom: 10px; font-size: 14px; }
+
+    .footer-bottom {
+      margin-top: 30px;
+      border-top: 1px solid rgba(255,255,255,.12);
+      min-height: 62px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      font-size: 14px;
+      color: rgba(255,255,255,.6);
+      padding: 10px 0;
+    }
+
+    .footer-bottom a {
+      color: rgba(255,255,255,.6);
+      text-decoration: none;
+      margin-left: 22px;
+    }
+
+    @media (max-width: 1024px) {
+      .nav { display: none; }
+      .footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 700px) {
+      .container { width: min(var(--max), calc(100% - 28px)); }
+      .site-header .container { width: min(1560px, calc(100% - 28px)); }
+      .header-row { height: 74px; }
+      .brand-name { font-size: 22px; }
+      .btn { min-width: 148px; height: 42px; }
+      .page h1 { font-size: 34px; }
+      .subhead { font-size: 22px; }
+      .section-title { font-size: 26px; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .footer-bottom a { margin: 0 16px 0 0; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-row">
+      <a class="brand" href="index.html">
+        <span class="logo">
+          <img src="images/image.png" alt="Soukhya Bharathi logo" />
+        </span>
+        <span class="brand-name serif">Soukhya bharathi</span>
+      </a>
+
+      <nav class="nav" aria-label="Main navigation">
+        <a href="about.html">About Us</a>
+        <a href="services.html">Services</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact Us</a>
+      </nav>
+
+      <a class="btn" href="consultation.html">Book Consultation</a>
+    </div>
+  </header>
+
+  <main class="page">
+    <div class="container">
+      <section class="contact-card">
+        <h1>Contact Us</h1>
+        <h2 class="subhead">Addresses and phone numbers</h2>
+        <p class="muted">Help Desk · Main number for appointments and information</p>
+
+        <h3 class="section-title">Main Clinic</h3>
+        <p class="address">
+          Soukhya Ayurveda Center<br>
+          108 Lotus Valley Road<br>
+          Kerala, India 682001
+        </p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Contact</th>
+              <th>Number</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>General number</td>
+              <td>+91 98765 43210</td>
+            </tr>
+            <tr>
+              <td>Appointment Office</td>
+              <td>+91 98991 43211</td>
+            </tr>
+            <tr>
+              <td>Email</td>
+              <td>info@ayurveda.wellness</td>
+            </tr>
+            <tr>
+              <td>Hours</td>
+              <td class="notes">
+                Monday - Friday: 8:00 AM - 6:00 PM<br>
+                Saturday: 9:00 AM - 4:00 PM<br>
+                Sunday: Closed
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3 class="section-title">Wellness Center - Mumbai</h3>
+        <p class="address">
+          Soukhya Wellness Center<br>
+          47 Serenity Boulevard<br>
+          Mumbai, Maharashtra 400001
+        </p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Contact</th>
+              <th>Number</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>General number</td>
+              <td>+91 22 1234 5678</td>
+            </tr>
+            <tr>
+              <td>Appointment Office</td>
+              <td>+91 22 1234 5679</td>
+            </tr>
+            <tr>
+              <td>Email</td>
+              <td>mumbai@ayurveda.wellness</td>
+            </tr>
+            <tr>
+              <td>Hours</td>
+              <td class="notes">
+                Monday - Sunday: 9:00 AM - 7:00 PM<br>
+                Evening Clinic: 3:00 PM - 8:00 PM
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <table class="dept-table">
+          <thead>
+            <tr>
+              <th>Department</th>
+              <th>Contact</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Patient Services</td>
+              <td>patienthelp@ayurveda.wellness</td>
+            </tr>
+            <tr>
+              <td>Therapist Services</td>
+              <td>therapists@ayurveda.wellness</td>
+            </tr>
+            <tr>
+              <td>Billing Department</td>
+              <td>billing@ayurveda.wellness</td>
+            </tr>
+            <tr>
+              <td>General Inquiries</td>
+              <td>helpdesk@ayurveda.wellness</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <div class="brand" style="color:#fff;">
+          <span class="logo logo-small">
+            <img src="images/image.png" alt="Soukhya Bharathi logo" />
+          </span>
+          <span class="brand-name serif" style="color:#fff;font-size:24px;">Soukhya bharathi</span>
+        </div>
+        <p>
+          Discover the ancient science of life. We provide authentic Ayurvedic
+          treatments for a balanced and healthy lifestyle.
+        </p>
+        <div class="socials">
+          <a href="#" aria-label="Twitter">𝕏</a>
+          <a href="#" aria-label="Instagram">◉</a>
+          <a href="#" aria-label="YouTube">▶</a>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="footer-title">Quick Links</h4>
+        <ul class="list">
+          <li><a href="index.html" style="color:inherit;text-decoration:none;">Home</a></li>
+          <li><a href="about.html" style="color:inherit;text-decoration:none;">About Us</a></li>
+          <li><a href="services.html" style="color:inherit;text-decoration:none;">Services</a></li>
+          <li><a href="blog.html" style="color:inherit;text-decoration:none;">Blog</a></li>
+          <li><a href="contact.html" style="color:inherit;text-decoration:none;">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-title">Treatments</h4>
+        <ul class="list">
+          <li>Panchakarma</li>
+          <li>Shirodhara</li>
+          <li>Abhyanga Massage</li>
+          <li>Herbal Therapy</li>
+          <li>Yoga &amp; Meditation</li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-title">Visit Us</h4>
+        <ul class="list">
+          <li>📍 108 Lotus Valley Road, Kerala, India 682001</li>
+          <li>📞 +91 98765 43210</li>
+          <li>✉ namaste@ayurveda.wellness</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <span>© 2026 Ayurveda Wellness. All rights reserved.</span>
+      <div>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
