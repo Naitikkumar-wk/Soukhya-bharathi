@@ -164,6 +164,80 @@
       font-weight: 400;
     }
 
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 5px;
+      background: none;
+      border: none;
+      padding: 0;
+    }
+
+    .hamburger span {
+      width: 24px;
+      height: 2px;
+      background: var(--heading);
+      border-radius: 2px;
+      transition: .3s;
+    }
+
+    .hamburger.active span:nth-child(1) {
+      transform: rotate(45deg) translate(8px, 8px);
+    }
+
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(7px, -7px);
+    }
+
+    .mobile-nav {
+      display: none;
+      position: absolute;
+      top: 88px;
+      left: 0;
+      right: 0;
+      background: #fff;
+      border-bottom: 1px solid var(--line);
+      flex-direction: column;
+      padding: 20px 24px;
+      gap: 16px;
+      z-index: 9;
+    }
+
+    .mobile-nav.active {
+      display: flex;
+    }
+
+    .mobile-nav a {
+      text-decoration: none;
+      color: var(--text);
+      font-size: 15px;
+      padding: 10px 0;
+      border-bottom: 1px solid #f0f1f3;
+      font-family: "MayoClinicSans", Arial, sans-serif;
+    }
+
+    .mobile-nav a:last-child {
+      border-bottom: none;
+    }
+
+    .mobile-book-btn {
+      background: rgb(31, 148, 142) !important;
+      color: #fff !important;
+      border-radius: 999px;
+      padding: 12px 20px !important;
+      text-align: center;
+      display: block;
+      margin-top: 10px;
+      font-weight: 700;
+      font-size: 14px;
+      border-bottom: none !important;
+    }
+
     .about-wrap {
       padding: 48px 0 36px;
     }
@@ -323,6 +397,8 @@
 
     @media (max-width: 1024px) {
       .nav { display: none; }
+      .hamburger { display: flex; }
+      .btn { display: none; }
       .story-grid { grid-template-columns: 1fr; }
       .story-image { height: 300px; min-height: 300px; }
       .cards-2 { grid-template-columns: 1fr; }
@@ -364,8 +440,21 @@
         <a href="contact.html">Contact Us</a>
       </nav>
 
+      <button class="hamburger" id="hamburgerBtn" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
       <a class="btn" href="consultation.html">Book Consultation</a>
     </div>
+    <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+      <a href="about.html">About Us</a>
+      <a href="services.html">Services</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact Us</a>
+      <a href="consultation.html" class="mobile-book-btn">Book Consultation</a>
+    </nav>
   </header>
 
   <main class="about-wrap">
@@ -506,5 +595,24 @@
       </div>
     </div>
   </footer>
+
+  <script>
+    // Mobile hamburger menu toggle
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const mobileNav = document.getElementById('mobileNav');
+
+    hamburgerBtn.addEventListener('click', () => {
+      hamburgerBtn.classList.toggle('active');
+      mobileNav.classList.toggle('active');
+    });
+
+    // Close mobile menu when a link is clicked
+    document.querySelectorAll('.mobile-nav a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburgerBtn.classList.remove('active');
+        mobileNav.classList.remove('active');
+      });
+    });
+  </script>
 </body>
 </html>
