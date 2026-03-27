@@ -282,6 +282,7 @@
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 20px;
+      align-items: stretch;
     }
 
     .article-card {
@@ -290,17 +291,27 @@
       border-radius: 10px;
       overflow: hidden;
       box-shadow: 0 2px 6px rgba(16, 24, 40, 0.05);
+      display: flex;
+      flex-direction: column;
+      height: 100%;
     }
 
     .article-card img {
       width: 100%;
-      height: 150px;
+      height: 210px;
       object-fit: cover;
       display: block;
     }
 
+    .face-focus {
+      object-position: center 20%;
+    }
+
     .article-body {
       padding: 12px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
     }
 
     .article-body h3 {
@@ -321,6 +332,7 @@
       text-decoration: none;
       font-size: 12px;
       font-weight: 700;
+      margin-top: auto;
     }
 
     footer {
@@ -467,46 +479,46 @@
           </article>
 
           <article class="article-card">
-            <img src="images/_G180570.TIF.png" alt="Meditative morning wellness" />
+            <img class="zoom-out" src="images/_G180570.TIF.png" alt="Meditative morning wellness" />
             <div class="article-body">
-              <h3>5 Ayurvedic Daily Routines for Better Health</h3>
-              <p>Learn the ancient practice of Dinacharya and build morning habits for consistency and vitality.</p>
+              <h3>How Meditation Supports Dosha Balance</h3>
+              <p>Simple breathwork and mindfulness habits to reduce stress, improve focus, and support better sleep.</p>
               <a class="read-link" href="#">Read more →</a>
             </div>
           </article>
 
           <article class="article-card">
-            <img src="images/_G180603.TIF.png" alt="Ayurvedic doctor consultation" />
+            <img src="images/_G180488.TIF.png" alt="Ayurvedic doctor consultation" />
             <div class="article-body">
-              <h3>5 Ayurvedic Daily Routines for Better Health</h3>
-              <p>Learn the ancient practice of Dinacharya and build morning habits for consistency and vitality.</p>
+              <h3>When You Should Consider an Ayurvedic Consultation</h3>
+              <p>Recognize early signs of imbalance and understand what happens during your first personalized session.</p>
               <a class="read-link" href="#">Read more →</a>
             </div>
           </article>
 
           <article class="article-card">
-            <img src="images/_G180596.TIF.png" alt="Healthy Ayurvedic ingredients" />
+            <img src="images/_G180463.TIF.png" alt="Healthy Ayurvedic ingredients" />
             <div class="article-body">
-              <h3>5 Ayurvedic Daily Routines for Better Health</h3>
-              <p>Learn the ancient practice of Dinacharya and build morning habits for consistency and vitality.</p>
+              <h3>Top Ayurvedic Ingredients for Everyday Cooking</h3>
+              <p>Discover kitchen staples like turmeric, cumin, and ginger that can naturally support digestion and immunity.</p>
               <a class="read-link" href="#">Read more →</a>
             </div>
           </article>
 
           <article class="article-card">
-            <img src="images/_G180603.TIF.png" alt="Ayurvedic checkup session" />
+            <img src="images/_G180449.TIF-1.png" alt="Ayurvedic checkup session" />
             <div class="article-body">
-              <h3>5 Ayurvedic Daily Routines for Better Health</h3>
-              <p>Learn the ancient practice of Dinacharya and build morning habits for consistency and vitality.</p>
+              <h3>Seasonal Detox Tips from Ayurveda</h3>
+              <p>Safe and practical ways to reset the body across seasons with food timing, herbs, and daily rhythm.</p>
               <a class="read-link" href="#">Read more →</a>
             </div>
           </article>
 
           <article class="article-card">
-            <img src="images/_G180570.TIF.png" alt="Morning yoga and breathwork" />
+            <img class="face-focus" src="images/_G180549.TIF.png" alt="Morning yoga and breathwork" />
             <div class="article-body">
-              <h3>5 Ayurvedic Daily Routines for Better Health</h3>
-              <p>Learn the ancient practice of Dinacharya and build morning habits for consistency and vitality.</p>
+              <h3>15-Minute Morning Yoga &amp; Pranayama Routine</h3>
+              <p>A beginner-friendly sequence to boost circulation, calm the mind, and start your day with clarity.</p>
               <a class="read-link" href="#">Read more →</a>
             </div>
           </article>
