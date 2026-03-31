@@ -604,11 +604,12 @@
       </a>
 
       <nav class="nav" aria-label="Main navigation">
-        <a href="index.html">Home</a>
-        <a href="about.html">About Us</a>
-        <a href="services.html">Services</a>
-        <a href="blog.html">Blog</a>
-        <a href="contact.html">Contact Us</a>
+        <a href="care.html">Care</a>
+        <a href="services.html">Treatments</a>
+        <a href="blog.html">Research & Education</a>
+        <a href="about.html">About SKBH</a>
+        <a href="success-stories.html">Success Stories</a>
+        <a href="contact.html">Contact</a>
       </nav>
 
       <button class="hamburger" id="hamburgerBtn" aria-label="Toggle navigation">
@@ -617,15 +618,16 @@
         <span></span>
       </button>
 
-      <a class="btn" href="consultation.html">Book Consultation</a>
+      <a class="btn" href="consultation.html">Book Appointment</a>
     </div>
     <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
-      <a href="index.html">Home</a>
-      <a href="about.html">About Us</a>
-      <a href="services.html">Services</a>
-      <a href="blog.html">Blog</a>
-      <a href="contact.html">Contact Us</a>
-      <a href="consultation.html" class="mobile-book-btn">Book Consultation</a>
+      <a href="care.html">Care</a>
+      <a href="services.html">Treatments</a>
+      <a href="blog.html">Research & Education</a>
+      <a href="about.html">About SKBH</a>
+      <a href="success-stories.html">Success Stories</a>
+      <a href="contact.html">Contact</a>
+      <a href="consultation.html" class="mobile-book-btn">Book Appointment</a>
     </nav>
   </header>
 
@@ -647,23 +649,22 @@
 
         <section id="panel1" class="panel active">
           <div class="card">
-            <h3>Select Service</h3>
+            <h3>Select Your Care Pathway</h3>
+            <p style="font-size: 13px; color: var(--text); margin-bottom: 20px;">
+              Choose the care program that best matches your health needs. Each pathway includes specialized assessment and treatment.
+            </p>
             <div class="service-grid" id="serviceGrid">
-              <div class="service-item selected" data-service="Digestive Health & Detox Wellness">
-                <strong>Digestive Health & Detox Wellness</strong>
-                Panchakarma and gut-balance therapies.
+              <div class="service-item selected" data-service="Terminal Illness Care">
+                <strong>Terminal Illness Care</strong>
+                Compassionate, integrated support for patients with serious long-term conditions.
               </div>
-              <div class="service-item" data-service="Stress Relief & Sleep Restoration">
-                <strong>Stress Relief & Sleep Restoration</strong>
-                Shirodhara and calming treatments.
+              <div class="service-item" data-service="Neuro Cognitive Care">
+                <strong>Neuro Cognitive Care</strong>
+                Specialized support for neurological and cognitive health.
               </div>
-              <div class="service-item" data-service="Pain Management">
-                <strong>Pain Management</strong>
-                Abhyanga and localized therapy care.
-              </div>
-              <div class="service-item" data-service="Women’s Wellness">
-                <strong>Women’s Wellness</strong>
-                Customized Ayurvedic support programs.
+              <div class="service-item" data-service="Ayurveda & Wellness Treatments">
+                <strong>Ayurveda & Wellness Treatments</strong>
+                Individual treatment modalities for targeted health goals.
               </div>
             </div>
             <div class="single-action">
@@ -673,8 +674,8 @@
           <div class="card">
             <h3>What to expect</h3>
             <p style="margin:0;font-size:13px;line-height:1.6;">
-              Your first consultation includes detailed history taking, pulse and dosha assessment,
-              and a personalized treatment recommendation with lifestyle and diet guidance.
+              Your first consultation includes detailed health history, comprehensive assessment of your condition, 
+              and a personalized care plan with treatment recommendations and lifestyle guidance.
             </p>
           </div>
         </section>
@@ -794,21 +795,23 @@
         <h4 class="footer-title">Quick Links</h4>
         <ul class="list">
           <li><a href="index.html" style="color:inherit;text-decoration:none;">Home</a></li>
-          <li><a href="about.html" style="color:inherit;text-decoration:none;">About Us</a></li>
-          <li><a href="services.html" style="color:inherit;text-decoration:none;">Services</a></li>
-          <li><a href="blog.html" style="color:inherit;text-decoration:none;">Blog</a></li>
-          <li><a href="contact.html" style="color:inherit;text-decoration:none;">Contact Us</a></li>
+          <li><a href="care.html" style="color:inherit;text-decoration:none;">Care</a></li>
+          <li><a href="services.html" style="color:inherit;text-decoration:none;">Treatments</a></li>
+          <li><a href="blog.html" style="color:inherit;text-decoration:none;">Research & Education</a></li>
+          <li><a href="about.html" style="color:inherit;text-decoration:none;">About SKBH</a></li>
+          <li><a href="success-stories.html" style="color:inherit;text-decoration:none;">Success Stories</a></li>
+          <li><a href="contact.html" style="color:inherit;text-decoration:none;">Contact</a></li>
         </ul>
       </div>
 
       <div>
         <h4 class="footer-title">Treatments</h4>
         <ul class="list">
-          <li>Panchakarma</li>
-          <li>Shirodhara</li>
-          <li>Abhyanga Massage</li>
-          <li>Herbal Therapy</li>
-          <li>Yoga &amp; Meditation</li>
+          <li><a href="services.html" style="color:inherit;text-decoration:none;">Panchakarma</a></li>
+          <li><a href="services.html" style="color:inherit;text-decoration:none;">Acupuncture</a></li>
+          <li><a href="services.html" style="color:inherit;text-decoration:none;">Cupping Therapy</a></li>
+          <li><a href="services.html" style="color:inherit;text-decoration:none;">Yoga Therapy</a></li>
+          <li><a href="services.html" style="color:inherit;text-decoration:none;">Kalari Marma Therapy</a></li>
         </ul>
       </div>
 
@@ -850,7 +853,7 @@
     });
 
     const state = {
-      service: 'Digestive Health & Detox Wellness',
+      service: 'Terminal Illness Care',
       date: 'Thursday, March 26, 2026',
       time: '02:00 PM',
       step: 1

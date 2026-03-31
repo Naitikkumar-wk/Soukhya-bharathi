@@ -405,11 +405,12 @@
       </a>
 
       <nav class="nav" aria-label="Main navigation">
-        <a href="index.html">Home</a>
-        <a href="about.html">About Us</a>
-        <a href="services.html">Services</a>
-        <a href="blog.html">Blog</a>
-        <a href="contact.html">Contact Us</a>
+        <a href="care.html">Care</a>
+        <a href="services.html">Treatments</a>
+        <a href="blog.html">Research & Education</a>
+        <a href="about.html">About SKBH</a>
+        <a href="success-stories.html">Success Stories</a>
+        <a href="contact.html">Contact</a>
       </nav>
 
       <button class="hamburger" id="hamburgerBtn" aria-label="Toggle navigation">
@@ -418,20 +419,68 @@
         <span></span>
       </button>
 
-      <a class="btn" href="consultation.html">Book Consultation</a>
+      <a class="btn" href="consultation.html">Book Appointment</a>
     </div>
     <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
-      <a href="index.html">Home</a>
-      <a href="about.html">About Us</a>
-      <a href="services.html">Services</a>
-      <a href="blog.html">Blog</a>
-      <a href="contact.html">Contact Us</a>
-      <a href="consultation.html" class="mobile-book-btn">Book Consultation</a>
+      <a href="care.html">Care</a>
+      <a href="services.html">Treatments</a>
+      <a href="blog.html">Research & Education</a>
+      <a href="about.html">About SKBH</a>
+      <a href="success-stories.html">Success Stories</a>
+      <a href="contact.html">Contact</a>
+      <a href="consultation.html" class="mobile-book-btn">Book Appointment</a>
     </nav>
   </header>
 
   <main class="page">
     <div class="container">
+      <div style="display: grid; grid-template-columns: 1fr 350px; gap: 40px; margin-bottom: 60px;">
+        <!-- Contact Form -->
+        <div>
+          <h2 style="font-size: 28px; margin-bottom: 24px; font-family: MayoClinicSerifDisplay, Georgia, serif;">Get in Touch</h2>
+          <form style="background: #fff; border: 1px solid var(--line); border-radius: 8px; padding: 28px;">
+            <div style="margin-bottom: 20px;">
+              <label for="name" style="display: block; font-size: 13px; font-weight: 700; margin-bottom: 6px; color: var(--heading);">Full Name</label>
+              <input type="text" id="name" name="name" placeholder="Your full name" style="width: 100%; padding: 10px 12px; border: 1px solid var(--line); border-radius: 6px; font-size: 13px; font-family: MayoClinicSans, Arial, sans-serif;" required />
+            </div>
+
+            <div style="margin-bottom: 20px;">
+              <label for="email" style="display: block; font-size: 13px; font-weight: 700; margin-bottom: 6px; color: var(--heading);">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="your@email.com" style="width: 100%; padding: 10px 12px; border: 1px solid var(--line); border-radius: 6px; font-size: 13px; font-family: MayoClinicSans, Arial, sans-serif;" required />
+            </div>
+
+            <div style="margin-bottom: 20px;">
+              <label for="phone" style="display: block; font-size: 13px; font-weight: 700; margin-bottom: 6px; color: var(--heading);">Phone Number</label>
+              <input type="tel" id="phone" name="phone" placeholder="+91 98765 43210" style="width: 100%; padding: 10px 12px; border: 1px solid var(--line); border-radius: 6px; font-size: 13px; font-family: MayoClinicSans, Arial, sans-serif;" />
+            </div>
+
+            <div style="margin-bottom: 20px;">
+              <label for="subject" style="display: block; font-size: 13px; font-weight: 700; margin-bottom: 6px; color: var(--heading);">Subject</label>
+              <input type="text" id="subject" name="subject" placeholder="What is your inquiry about?" style="width: 100%; padding: 10px 12px; border: 1px solid var(--line); border-radius: 6px; font-size: 13px; font-family: MayoClinicSans, Arial, sans-serif;" />
+            </div>
+
+            <div style="margin-bottom: 20px;">
+              <label for="message" style="display: block; font-size: 13px; font-weight: 700; margin-bottom: 6px; color: var(--heading);">Message</label>
+              <textarea id="message" name="message" placeholder="Tell us more about your inquiry..." rows="4" style="width: 100%; padding: 10px 12px; border: 1px solid var(--line); border-radius: 6px; font-size: 13px; font-family: MayoClinicSans, Arial, sans-serif; resize: vertical;"></textarea>
+            </div>
+
+            <button type="submit" style="background: var(--teal); color: #fff; border: none; border-radius: 999px; padding: 12px 24px; font-size: 13px; font-weight: 700; cursor: pointer; font-family: MayoClinicSans, Arial, sans-serif; width: 100;">Send Message</button>
+          </form>
+        </div>
+
+        <!-- Sidebar CTA -->
+        <div style="position: sticky; top: 120px; height: fit-content;">
+          <div style="background: #f0fffe; border: 1px solid #a7e9e3; border-radius: 8px; padding: 24px; text-align: center;">
+            <h3 style="font-size: 18px; margin: 0 0 12px; color: var(--heading); font-family: MayoClinicSerifDisplay, Georgia, serif;">Ready to Begin?</h3>
+            <p style="font-size: 13px; margin: 0 0 20px; line-height: 1.6; color: var(--text);">Schedule a consultation with our care team and start your wellness journey today.</p>
+            <a href="consultation.html" style="display: block; background: var(--teal); color: #fff; text-decoration: none; padding: 12px 20px; border-radius: 999px; font-size: 13px; font-weight: 700; font-family: MayoClinicSans, Arial, sans-serif;">Book Appointment</a>
+            <p style="font-size: 12px; margin: 16px 0 0; color: #999;">Usually responds within 24 hours</p>
+          </div>
+        </div>
+      </div>
+
+      <hr style="border: none; border-top: 1px solid var(--line); margin: 40px 0;" />
+
       <section class="contact-card">
         <h1>Contact Us</h1>
         <h2 class="subhead">Addresses and phone numbers</h2>
@@ -566,21 +615,23 @@
         <h4 class="footer-title">Quick Links</h4>
         <ul class="list">
           <li><a href="index.html" style="color:inherit;text-decoration:none;">Home</a></li>
-          <li><a href="about.html" style="color:inherit;text-decoration:none;">About Us</a></li>
-          <li><a href="services.html" style="color:inherit;text-decoration:none;">Services</a></li>
-          <li><a href="blog.html" style="color:inherit;text-decoration:none;">Blog</a></li>
-          <li><a href="contact.html" style="color:inherit;text-decoration:none;">Contact Us</a></li>
+          <li><a href="care.html" style="color:inherit;text-decoration:none;">Care</a></li>
+          <li><a href="services.html" style="color:inherit;text-decoration:none;">Treatments</a></li>
+          <li><a href="blog.html" style="color:inherit;text-decoration:none;">Research & Education</a></li>
+          <li><a href="about.html" style="color:inherit;text-decoration:none;">About SKBH</a></li>
+          <li><a href="success-stories.html" style="color:inherit;text-decoration:none;">Success Stories</a></li>
+          <li><a href="contact.html" style="color:inherit;text-decoration:none;">Contact</a></li>
         </ul>
       </div>
 
       <div>
         <h4 class="footer-title">Treatments</h4>
         <ul class="list">
-          <li>Panchakarma</li>
-          <li>Shirodhara</li>
-          <li>Abhyanga Massage</li>
-          <li>Herbal Therapy</li>
-          <li>Yoga &amp; Meditation</li>
+          <li><a href="services.html" style="color:inherit;text-decoration:none;">Panchakarma</a></li>
+          <li><a href="services.html" style="color:inherit;text-decoration:none;">Acupuncture</a></li>
+          <li><a href="services.html" style="color:inherit;text-decoration:none;">Cupping Therapy</a></li>
+          <li><a href="services.html" style="color:inherit;text-decoration:none;">Yoga Therapy</a></li>
+          <li><a href="services.html" style="color:inherit;text-decoration:none;">Kalari Marma Therapy</a></li>
         </ul>
       </div>
 

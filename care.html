@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About SKBH | Saukhyabharathi</title>
+  <title>Care @ Saukhyabharathi | Our Programs</title>
   <style>
     @font-face {
       font-family: "MayoClinicSans";
@@ -66,7 +66,7 @@
       margin: 0;
       color: var(--heading);
       font-family: "MayoClinicSerifDisplay", Georgia, "Times New Roman", serif;
-      font-weight: 300;
+      font-weight: 700;
     }
 
     .container {
@@ -136,18 +136,11 @@
       display: block;
     }
 
-    .logo-small {
-      width: 32px;
-      height: 32px;
-      border-radius: 8px;
-    }
-
     .brand-name {
-      font-size: 40px;
+      font-size: 24px;
       color: var(--heading);
       font-family: "MayoClinicSerifDisplay", Georgia, serif;
       font-weight: 700;
-      letter-spacing: 0.2px;
     }
 
     .nav {
@@ -238,105 +231,117 @@
       border-bottom: none !important;
     }
 
-    .about-wrap {
-      padding: 48px 0 36px;
-    }
-
-    .story-grid {
-      display: grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap: 28px;
-      align-items: start;
-    }
-
-    .story h1 { font-size: 34px; margin-bottom: 14px; font-family: "MayoClinicSerifDisplay", Georgia, serif; font-weight: 700; }
-    .story p { margin: 0 0 10px; font-size: 14px; }
-
-    .story-image {
-      border-radius: 8px;
-      overflow: hidden;
-      border: 1px solid var(--line);
-      height: 340px;
-      min-height: 340px;
-    }
-
-    .story-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-      display: block;
-    }
-
-    .cards-2 {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 22px;
-      margin-top: 24px;
-    }
-
-    .info-card {
-      border: 1px solid var(--line);
-      border-radius: 10px;
-      padding: 20px;
-      background: #fff;
-      box-shadow: 0 1px 2px rgba(16, 24, 40, .05);
-    }
-
-    .info-card h3 { font-size: 20px; margin-bottom: 10px; font-family: "MayoClinicSerifDisplay", Georgia, serif; font-weight: 700; }
-    .info-card p, .info-card li { font-size: 14px; }
-
-    .info-card ul {
-      margin: 0;
-      padding-left: 18px;
-      display: grid;
-      gap: 6px;
-    }
-
-    .team {
-      margin-top: 48px;
+    .page-intro {
+      padding: 48px 0;
       text-align: center;
     }
 
-    .team h2 { font-size: 32px; font-family: "MayoClinicSerifDisplay", Georgia, serif; font-weight: 700; }
-    .team .sub {
-      margin: 8px auto 22px;
+    .page-intro h1 {
+      font-size: 44px;
+      margin-bottom: 16px;
+    }
+
+    .page-intro p {
+      margin: 0 auto;
+      max-width: 720px;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    section { padding: 80px 0; }
+
+    .section-head {
+      text-align: center;
+      margin-bottom: 44px;
+    }
+
+    .section-head h2 {
+      font-size: 36px;
+      font-family: "MayoClinicSerifDisplay", Georgia, serif;
+      font-weight: 700;
+      line-height: 1.1;
+    }
+
+    .section-head p {
+      margin: 12px auto 0;
       max-width: 640px;
-      font-size: 14px;
     }
 
-    .team-grid {
+    .grid-2 {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 16px;
-      padding: 14px;
-      background: #f5f5f5;
-      border-radius: 10px;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
     }
 
-    .member {
-      background: #fff;
-      border-radius: 8px;
+    .care-card {
       border: 1px solid var(--line);
+      border-radius: 14px;
+      background: #fff;
       overflow: hidden;
+      box-shadow: 0 2px 8px rgba(16, 24, 40, .06);
     }
 
-    .member img {
+    .care-card img {
       width: 100%;
-      height: 250px;
+      height: 280px;
       object-fit: cover;
-      object-position: center top;
       display: block;
     }
 
-    .member-body { padding: 12px 10px 14px; }
-    .member-name {
-      color: var(--heading);
-      font-size: 14px;
-      margin-bottom: 3px;
+    .care-body {
+      padding: 24px;
+    }
+
+    .care-body h3 {
+      font-size: 28px;
+      margin-bottom: 10px;
+      font-family: "MayoClinicSerifDisplay", Georgia, serif;
       font-weight: 700;
     }
-    .member-role { font-size: 12px; }
+
+    .care-body p {
+      font-size: 14px;
+      margin: 0 0 20px;
+      line-height: 1.6;
+    }
+
+    .care-links {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .care-links a {
+      color: #1e3a8a;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      padding: 8px 0;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .care-links a:last-child {
+      border-bottom: none;
+    }
+
+    .cta-band {
+      background: #f0fffe;
+      border: 1px solid #a7e9e3;
+      border-radius: 8px;
+      padding: 32px;
+      text-align: center;
+      margin: 60px 0;
+    }
+
+    .cta-band h3 {
+      font-size: 24px;
+      margin-bottom: 12px;
+    }
+
+    .cta-band p {
+      margin: 0 0 20px;
+      color: #4a5565;
+    }
 
     footer {
       margin-top: 48px;
@@ -393,27 +398,22 @@
       color: rgba(255,255,255,.6);
       text-decoration: none;
       margin-left: 22px;
-     }
+    }
 
     @media (max-width: 1024px) {
       .nav { display: none; }
       .hamburger { display: flex; }
-      .header-row .btn { display: none; }
-      .story-grid { grid-template-columns: 1fr; }
-      .story-image { height: 300px; min-height: 300px; }
-      .cards-2 { grid-template-columns: 1fr; }
-      .team-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .grid-2 { grid-template-columns: 1fr; }
       .footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     }
 
     @media (max-width: 700px) {
       .container { width: min(var(--max), calc(100% - 28px)); }
+      .site-header .container { width: min(1560px, calc(100% - 28px)); }
       .header-row { height: 74px; }
       .brand-name { font-size: 22px; }
-      .story h1 { font-size: 30px; }
-      .story-image { height: 240px; min-height: 240px; }
-      .team h2 { font-size: 28px; }
-      .team-grid { grid-template-columns: 1fr; }
+      .page-intro h1 { font-size: 30px; }
+      .care-card img { height: 240px; }
       .footer-grid { grid-template-columns: 1fr; }
       .footer-bottom {
         flex-direction: column;
@@ -461,108 +461,148 @@
     </nav>
   </header>
 
-  <main class="about-wrap">
-    <div class="container">
-      <section class="story-grid">
-        <article class="story">
-          <h1>Our Story</h1>
-          <p>
-            Soukhya Bharathi was founded to bring authentic Ayurvedic healing into modern life.
-            What began as a small local clinic has evolved into a trusted wellness destination
-            for families seeking natural, preventive, and restorative care.
-          </p>
-          <p>
-            We combine classical Ayurvedic knowledge with compassionate, personalized guidance.
-            Every treatment plan is tailored to your unique constitution, lifestyle, and goals.
-          </p>
-          <p>
-            Our mission is simple: help people feel balanced, energized, and healthy through
-            safe, holistic, and time-tested Ayurvedic therapies.
-          </p>
-        </article>
+  <main>
+    <section class="page-intro">
+      <div class="container">
+        <h1>Care @ Saukhyabharathi</h1>
+        <p>
+          Specialized care programs designed for specific health conditions and life stages.
+          Choose your care pathway and connect with our expert physicians.
+        </p>
+      </div>
+    </section>
 
-        <aside class="story-image" aria-label="Clinic interior image">
-        <img src="images/about_story.png" alt="Serene Ayurvedic wellness clinic interior with warm lighting, comfortable seating areas, and calming natural elements creating a peaceful healing environment" />
-        </aside>
-      </section>
+    <section id="terminal-care">
+      <div class="container">
+        <div class="section-head">
+          <h2>Terminal Illness Care Program</h2>
+          <p>Compassionate, integrated support for patients with serious long-term conditions</p>
+        </div>
 
-      <section class="cards-2" style="margin-bottom: 60px; padding: 40px; background: #f0fffe; border: 1px solid #a7e9e3; border-radius: 12px;" aria-label="Philosophical foundation">
-        <article class="info-card" style="grid-column: 1 / -1;">
-          <h3 style="text-align: center; font-size: 28px; margin-bottom: 16px;">Our Philosophy</h3>
-          <p style="text-align: center; font-size: 14px; line-height: 1.6; margin: 0;">
-            At Saukhyabharathi, we believe health is not the absence of disease, but a state of complete physical, mental, and spiritual balance. 
-            Rooted in 5,000 years of Ayurvedic wisdom, our approach addresses the root causes of imbalance rather than merely treating symptoms. 
-            We honor the unique constitution of each individual and create personalized pathways to wellness that harmonize with nature's rhythms. 
-            Our commitment is to empower you with knowledge and practices that sustain health, prevent disease, and create lasting transformation.
-          </p>
-        </article>
-      </section>
-
-      <section class="cards-2" aria-label="Vision and values">
-        <article class="info-card">
-          <h3>Our Vision</h3>
-          <p>
-            To be a leading Ayurvedic center where traditional wisdom meets modern wellness,
-            empowering every individual to live in harmony with nature.
-          </p>
-        </article>
-
-        <article class="info-card">
-          <h3>Our Values</h3>
-          <ul>
-            <li>Authenticity in classical Ayurvedic practice</li>
-            <li>Personalized, patient-first treatment plans</li>
-            <li>Compassion, trust, and integrity in care</li>
-            <li>Education for sustainable long-term wellness</li>
-          </ul>
-        </article>
-      </section>
-
-      <section class="team" aria-label="Expert team">
-        <h2>Meet Our Expert Team</h2>
-        <p class="sub">Our experienced practitioners are dedicated to your healing journey.</p>
-
-        <div class="team-grid">
-          <article class="member">
-            <img src="images/person1.png" alt="Dr. Lakshmi Iyer" />
-            <div class="member-body">
-              <div class="member-name">Lakshmi Iyer Bala</div>
-              <div class="member-role">Chief Ayurvedic Physician</div>
+        <div class="grid-2">
+          <article class="care-card">
+            <img src="images/act1.png" alt="Patient journey" />
+            <div class="care-body">
+              <h3>Patient Journey</h3>
+              <p>Understanding the path through diagnosis, treatment, and ongoing wellness management with our comprehensive care model.</p>
+              <div class="care-links">
+                <a href="#">View Journey Details →</a>
+              </div>
             </div>
           </article>
 
-          <article class="member">
-            <img src="images/person2.png" alt="Dr. Neel Kaveriker" />
-            <div class="member-body">
-              <div class="member-name">Jyothipriya Usha Bodi</div>
-              <div class="member-role">Panchakarma Specialist</div>
+          <article class="care-card">
+            <img src="images/person1.png" alt="Care doctors" />
+            <div class="care-body">
+              <h3>Doctors</h3>
+              <p>Meet our specialists experienced in Terminal Illness Care with decades of compassionate practice and patient outcomes.</p>
+              <div class="care-links">
+                <a href="about.html#team">Meet Our Doctors →</a>
+              </div>
             </div>
           </article>
 
-          <article class="member">
-            <img src="images/person3.png" alt="Jyothipriya Usha Bodi" />
-            <div class="member-body">
-              <div class="member-name"> Dr. Neel Kaveriker</div>
-              <div class="member-role">Lifestyle &amp; Nutrition Consultant</div>
+          <article class="care-card">
+            <img src="images/act2.png" alt="Patient stories" />
+            <div class="care-body">
+              <h3>Testimonials</h3>
+              <p>Hear from patients and families whose lives have been transformed through our Terminal Illness Care program.</p>
+              <div class="care-links">
+                <a href="success-stories.html">Read Stories →</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="care-card">
+            <img src="images/act3.png" alt="Book appointment" />
+            <div class="care-body">
+              <h3>Book Appointment</h3>
+              <p>Begin your care journey with a personalized consultation. Our team will assess and create your wellness plan.</p>
+              <div class="care-links">
+                <a href="consultation.html">Schedule Now →</a>
+              </div>
             </div>
           </article>
         </div>
-      </section>
+      </div>
+    </section>
+
+    <section id="neuro-care" style="background: #f9fafb;">
+      <div class="container">
+        <div class="section-head">
+          <h2>Neuro Cognitive Care Program</h2>
+          <p>Specialized support for neurological and cognitive health with evidence-based Ayurvedic approaches</p>
+        </div>
+
+        <div class="grid-2">
+          <article class="care-card">
+            <img src="images/act2.png" alt="Care approach" />
+            <div class="care-body">
+              <h3>Care Approach</h3>
+              <p>Our structured methodology combines classical Ayurvedic principles with modern understanding of neuro-cognitive wellness.</p>
+              <div class="care-links">
+                <a href="#">Explore Our Approach →</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="care-card">
+            <img src="images/person2.png" alt="Patient stories" />
+            <div class="care-body">
+              <h3>Patient Stories</h3>
+              <p>Real cases of patients who have regained mental clarity, improved focus, and better cognitive function.</p>
+              <div class="care-links">
+                <a href="success-stories.html">View Stories →</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="care-card">
+            <img src="images/person3.png" alt="Specialists" />
+            <div class="care-body">
+              <h3>Doctors</h3>
+              <p>Our Neuro Cognitive Care specialists bring years of experience in neurological health and cognitive rehabilitation.</p>
+              <div class="care-links">
+                <a href="about.html#team">Meet Specialists →</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="care-card">
+            <img src="images/act1.png" alt="Book now" />
+            <div class="care-body">
+              <h3>Book Appointment</h3>
+              <p>Start with a cognitive assessment and personalized care plan. Our doctors will guide your wellness journey.</p>
+              <div class="care-links">
+                <a href="consultation.html">Schedule Now →</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="cta-band">
+        <h3>Ready to Begin Your Care Journey?</h3>
+        <p>Choose either program and take the first step toward better health with our expert team.</p>
+        <a href="consultation.html" class="btn">Book Your Consultation</a>
+      </div>
     </div>
   </main>
 
-  <footer id="contact">
+  <footer>
     <div class="container footer-grid">
       <div class="footer-brand">
         <div class="brand" style="color:#fff;">
-          <span class="logo logo-small">
+          <span class="logo" style="width:32px;height:32px;border-radius:8px;">
             <img src="images/image.png" alt="Soukhya Bharathi logo" />
           </span>
           <span class="brand-name serif" style="color:#fff;font-size:24px;">Soukhya bharathi</span>
         </div>
         <p>
-          Discover the ancient science of life. We provide authentic Ayurvedic
-          treatments for a balanced and healthy lifestyle.
+          Discover the science of life. We provide authentic Ayurvedic
+          care for serious health conditions and long-term wellness.
         </p>
         <div class="socials">
           <a href="#" aria-label="Twitter">𝕏</a>
@@ -575,22 +615,21 @@
         <h4 class="footer-title">Quick Links</h4>
         <ul class="list">
           <li><a href="index.html" style="color:inherit;text-decoration:none;">Home</a></li>
-                    <li><a href="care.html" style="color:inherit;text-decoration:none;">Care</a></li>
-                    <li><a href="services.html" style="color:inherit;text-decoration:none;">Treatments</a></li>
-                    <li><a href="blog.html" style="color:inherit;text-decoration:none;">Research & Education</a></li>
-                    <li><a href="about.html" style="color:inherit;text-decoration:none;">About SKBH</a></li>
-                    <li><a href="success-stories.html" style="color:inherit;text-decoration:none;">Success Stories</a></li>
-                    <li><a href="contact.html" style="color:inherit;text-decoration:none;">Contact</a></li>
+          <li><a href="care.html" style="color:inherit;text-decoration:none;">Care</a></li>
+          <li><a href="services.html" style="color:inherit;text-decoration:none;">Treatments</a></li>
+          <li><a href="blog.html" style="color:inherit;text-decoration:none;">Research & Education</a></li>
+          <li><a href="about.html" style="color:inherit;text-decoration:none;">About SKBH</a></li>
+          <li><a href="success-stories.html" style="color:inherit;text-decoration:none;">Success Stories</a></li>
+          <li><a href="contact.html" style="color:inherit;text-decoration:none;">Contact</a></li>
+        </ul>
       </div>
 
       <div>
-        <h4 class="footer-title">Treatments</h4>
+        <h4 class="footer-title">Care Programs</h4>
         <ul class="list">
-          <li><a href="services.html" style="color:inherit;text-decoration:none;">Panchakarma</a></li>
-          <li><a href="services.html" style="color:inherit;text-decoration:none;">Acupuncture</a></li>
-          <li><a href="services.html" style="color:inherit;text-decoration:none;">Cupping Therapy</a></li>
-          <li><a href="services.html" style="color:inherit;text-decoration:none;">Yoga Therapy</a></li>
-          <li><a href="services.html" style="color:inherit;text-decoration:none;">Kalari Marma Therapy</a></li>
+          <li><a href="#terminal-care" style="color:inherit;text-decoration:none;">Terminal Illness Care</a></li>
+          <li><a href="#neuro-care" style="color:inherit;text-decoration:none;">Neuro Cognitive Care</a></li>
+          <li><a href="contact.html" style="color:inherit;text-decoration:none;">Contact Us</a></li>
         </ul>
       </div>
 
@@ -605,7 +644,7 @@
     </div>
 
     <div class="container footer-bottom">
-      <span>© 2026 Ayurveda Wellness. All rights reserved.</span>
+      <span>© 2026 Saukhyabharathi. All rights reserved.</span>
       <div>
         <a href="#">Privacy Policy</a>
         <a href="#">Terms of Service</a>
@@ -614,7 +653,6 @@
   </footer>
 
   <script>
-    // Mobile hamburger menu toggle
     const hamburgerBtn = document.getElementById('hamburgerBtn');
     const mobileNav = document.getElementById('mobileNav');
 
@@ -623,7 +661,6 @@
       mobileNav.classList.toggle('active');
     });
 
-    // Close mobile menu when a link is clicked
     document.querySelectorAll('.mobile-nav a').forEach(link => {
       link.addEventListener('click', () => {
         hamburgerBtn.classList.remove('active');

@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Success Stories | Saukhyabharathi</title>
+  <style>
+    @font-face {
+      font-family: "MayoClinicSans";
+      src: url("fonts/MayoClinicSans-Regular.woff2") format("woff2");
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: "MayoClinicSans";
+      src: url("fonts/MayoClinicSans-Bold.woff2") format("woff2");
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: "MayoClinicSerifDisplay";
+      src: url("fonts/MayoClinicSerifDisplay-Light.woff2") format("woff2");
+      font-weight: 300;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: "MayoClinicSerifDisplay";
+      src: url("fonts/MayoClinicSerifDisplay-Bold.woff2") format("woff2");
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: "MayoClinicSerif";
+      src: url("fonts/MayoClinicSerif-Bold.woff2") format("woff2");
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    :root {
+      --teal: #1f948e;
+      --heading: #101828;
+      --text: #4a5565;
+      --line: #e5e7eb;
+      --max: 1184px;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "MayoClinicSans", Arial, sans-serif;
+      color: var(--text);
+      background: #fff;
+      line-height: 1.55;
+    }
+
+    h1, h2, h3, h4, .serif {
+      margin: 0;
+      color: var(--heading);
+      font-family: "MayoClinicSerifDisplay", Georgia, "Times New Roman", serif;
+      font-weight: 700;
+    }
+
+    .container {
+      width: min(var(--max), calc(100% - 48px));
+      margin: 0 auto;
+    }
+
+    .btn {
+      border: 0;
+      border-radius: 999px;
+      padding: 10px 20px;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--teal);
+      color: #fff;
+      font-family: "MayoClinicSans", Arial, sans-serif;
+    }
+
+    .site-header {
+      background: #fff;
+      border-bottom: 1px solid var(--line);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .site-header .container {
+      width: min(1560px, calc(100% - 48px));
+    }
+
+    .header-row {
+      height: 88px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .logo {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: var(--teal);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .logo img {
+      width: 88%;
+      height: 88%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .brand-name {
+      font-size: 24px;
+      color: var(--heading);
+      font-family: "MayoClinicSerifDisplay", Georgia, serif;
+      font-weight: 700;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 34px;
+    }
+
+    .nav a {
+      text-decoration: none;
+      color: var(--text);
+      font-size: 14px;
+      font-family: "MayoClinicSans", Arial, sans-serif;
+      font-weight: 400;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 5px;
+      background: none;
+      border: none;
+      padding: 0;
+    }
+
+    .hamburger span {
+      width: 24px;
+      height: 2px;
+      background: var(--heading);
+      border-radius: 2px;
+      transition: .3s;
+    }
+
+    .hamburger.active span:nth-child(1) {
+      transform: rotate(45deg) translate(8px, 8px);
+    }
+
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(7px, -7px);
+    }
+
+    .mobile-nav {
+      display: none;
+      position: absolute;
+      top: 88px;
+      left: 0;
+      right: 0;
+      background: #fff;
+      border-bottom: 1px solid var(--line);
+      flex-direction: column;
+      padding: 20px 24px;
+      gap: 16px;
+      z-index: 9;
+    }
+
+    .mobile-nav.active {
+      display: flex;
+    }
+
+    .mobile-nav a {
+      text-decoration: none;
+      color: var(--text);
+      font-size: 15px;
+      padding: 10px 0;
+      border-bottom: 1px solid #f0f1f3;
+      font-family: "MayoClinicSans", Arial, sans-serif;
+    }
+
+    .mobile-nav a:last-child {
+      border-bottom: none;
+    }
+
+    .mobile-book-btn {
+      background: rgb(31, 148, 142) !important;
+      color: #fff !important;
+      border-radius: 999px;
+      padding: 12px 20px !important;
+      text-align: center;
+      display: block;
+      margin-top: 10px;
+      font-weight: 700;
+      font-size: 14px;
+      border-bottom: none !important;
+    }
+
+    .page-intro {
+      padding: 48px 0;
+      text-align: center;
+    }
+
+    .page-intro h1 {
+      font-size: 44px;
+      margin-bottom: 16px;
+    }
+
+    .page-intro p {
+      margin: 0 auto;
+      max-width: 720px;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    section { padding: 80px 0; }
+
+    .section-head {
+      text-align: center;
+      margin-bottom: 44px;
+    }
+
+    .section-head h2 {
+      font-size: 36px;
+      font-family: "MayoClinicSerifDisplay", Georgia, serif;
+      font-weight: 700;
+      line-height: 1.1;
+    }
+
+    .section-head p {
+      margin: 12px auto 0;
+      max-width: 640px;
+    }
+
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+
+    .testimonial-card {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 28px;
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .testimonial-header {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+
+    .testimonial-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--teal);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 20px;
+      font-weight: bold;
+      flex-shrink: 0;
+    }
+
+    .testimonial-info h3 {
+      font-size: 16px;
+      font-family: "MayoClinicSans", Arial, sans-serif;
+      margin: 0 0 2px;
+      color: var(--heading);
+    }
+
+    .testimonial-info p {
+      font-size: 12px;
+      margin: 0;
+      color: #999;
+    }
+
+    .stars {
+      color: #fdb750;
+      font-size: 12px;
+      letter-spacing: 2px;
+      margin-bottom: 14px;
+    }
+
+    .testimonial-text {
+      font-size: 14px;
+      line-height: 1.6;
+      flex-grow: 1;
+      margin-bottom: 16px;
+      color: var(--text);
+    }
+
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      margin-bottom: 40px;
+    }
+
+    .video-card {
+      border-radius: 12px;
+      overflow: hidden;
+      background: #000;
+      aspect-ratio: 16/9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      cursor: pointer;
+      transition: transform .3s;
+    }
+
+    .video-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .video-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .play-btn {
+      position: absolute;
+      width: 64px;
+      height: 64px;
+      background: rgba(31, 148, 142, .9);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 28px;
+      transition: .3s;
+    }
+
+    .video-card:hover .play-btn {
+      background: var(--teal);
+      transform: scale(1.1);
+    }
+
+    .video-info {
+      padding: 14px 0;
+      text-align: center;
+    }
+
+    .video-info h4 {
+      font-size: 16px;
+      margin: 0 0 4px;
+      font-family: "MayoClinicSans", Arial, sans-serif;
+      color: var(--heading);
+    }
+
+    .video-info p {
+      font-size: 13px;
+      margin: 0;
+      color: #999;
+    }
+
+    .cta-band {
+      background: #f0fffe;
+      border: 1px solid #a7e9e3;
+      border-radius: 8px;
+      padding: 32px;
+      text-align: center;
+      margin: 60px 0;
+    }
+
+    .cta-band h3 {
+      font-size: 24px;
+      margin-bottom: 12px;
+    }
+
+    .cta-band p {
+      margin: 0 0 20px;
+      color: #4a5565;
+    }
+
+    footer {
+      margin-top: 48px;
+      background: var(--teal);
+      color: rgba(255,255,255,.8);
+      padding: 56px 0 0;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr 1fr 1.1fr;
+      gap: 40px;
+    }
+
+    .footer-title {
+      color: #fff;
+      font-family: "MayoClinicSerif", Georgia, serif;
+      font-size: 16px;
+      margin-bottom: 12px;
+      font-weight: 700;
+    }
+
+    .footer-brand p { margin: 12px 0 16px; font-size: 14px; }
+
+    .socials { display: flex; gap: 10px; }
+    .socials a {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      text-decoration: none;
+      background: rgba(255,255,255,.12);
+    }
+
+    .list { list-style: none; padding: 0; margin: 0; }
+    .list li { margin-bottom: 10px; font-size: 14px; }
+
+    .footer-bottom {
+      margin-top: 30px;
+      border-top: 1px solid rgba(255,255,255,.12);
+      min-height: 62px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      font-size: 14px;
+      color: rgba(255,255,255,.6);
+      padding: 10px 0;
+    }
+
+    .footer-bottom a {
+      color: rgba(255,255,255,.6);
+      text-decoration: none;
+      margin-left: 22px;
+    }
+
+    @media (max-width: 1024px) {
+      .nav { display: none; }
+      .hamburger { display: flex; }
+      .testimonial-grid { grid-template-columns: 1fr; }
+      .video-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 700px) {
+      .container { width: min(var(--max), calc(100% - 28px)); }
+      .site-header .container { width: min(1560px, calc(100% - 28px)); }
+      .header-row { height: 74px; }
+      .brand-name { font-size: 22px; }
+      .page-intro h1 { font-size: 30px; }
+      .section-head h2 { font-size: 28px; }
+      .testimonial-grid { grid-template-columns: 1fr; }
+      .video-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .footer-bottom a { margin: 0 16px 0 0; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-row">
+      <a class="brand" href="index.html">
+        <span class="logo">
+          <img src="images/image.png" alt="Soukhya Bharathi logo" />
+        </span>
+        <span class="brand-name serif">Soukhya bharathi</span>
+      </a>
+
+      <nav class="nav" aria-label="Main navigation">
+        <a href="care.html">Care</a>
+        <a href="services.html">Treatments</a>
+        <a href="blog.html">Research & Education</a>
+        <a href="about.html">About SKBH</a>
+        <a href="success-stories.html">Success Stories</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <button class="hamburger" id="hamburgerBtn" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <a class="btn" href="consultation.html">Book Appointment</a>
+    </div>
+    <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+      <a href="care.html">Care</a>
+      <a href="services.html">Treatments</a>
+      <a href="blog.html">Research & Education</a>
+      <a href="about.html">About SKBH</a>
+      <a href="success-stories.html">Success Stories</a>
+      <a href="contact.html">Contact</a>
+      <a href="consultation.html" class="mobile-book-btn">Book Appointment</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-intro">
+      <div class="container">
+        <h1>Success Stories</h1>
+        <p>
+          Real transformations from real patients. Discover how our care programs
+          have helped people reclaim their health and wellbeing.
+        </p>
+      </div>
+    </section>
+
+    <section id="video-testimonials">
+      <div class="container">
+        <div class="section-head">
+          <h2>Video Testimonials</h2>
+          <p>Hear directly from patients about their transformation journey</p>
+        </div>
+
+        <div class="video-grid">
+          <div>
+            <div class="video-card">
+              <img src="images/act1.png" alt="Patient testimonial 1" />
+              <div class="play-btn">▶</div>
+            </div>
+            <div class="video-info">
+              <h4>Rajesh's Recovery</h4>
+              <p>Terminal Illness Care Program</p>
+            </div>
+          </div>
+
+          <div>
+            <div class="video-card">
+              <img src="images/act2.png" alt="Patient testimonial 2" />
+              <div class="play-btn">▶</div>
+            </div>
+            <div class="video-info">
+              <h4>Priya's Cognitive Wellness</h4>
+              <p>Neuro Cognitive Care Program</p>
+            </div>
+          </div>
+
+          <div>
+            <div class="video-card">
+              <img src="images/act3.png" alt="Patient testimonial 3" />
+              <div class="play-btn">▶</div>
+            </div>
+            <div class="video-info">
+              <h4>Arjun's Journey</h4>
+              <p>Terminal Illness Care Program</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="written-reviews" style="background: #f9fafb;">
+      <div class="container">
+        <div class="section-head">
+          <h2>Written Reviews</h2>
+          <p>What our patients say about their care experience</p>
+        </div>
+
+        <div class="testimonial-grid">
+          <article class="testimonial-card">
+            <div class="testimonial-header">
+              <div class="testimonial-avatar">SR</div>
+              <div class="testimonial-info">
+                <h3>Sanjay Ravi</h3>
+                <p>Terminal Illness Care</p>
+              </div>
+            </div>
+            <div class="stars">★★★★★</div>
+            <p class="testimonial-text">
+              "The compassionate care I received at Saukhyabharathi transformed my entire perspective on my health journey. The doctors truly listened and created a personalized plan that addressed not just my condition but my overall wellbeing."
+            </p>
+          </article>
+
+          <article class="testimonial-card">
+            <div class="testimonial-header">
+              <div class="testimonial-avatar">MK</div>
+              <div class="testimonial-info">
+                <h3>Meera Krishnan</h3>
+                <p>Neuro Cognitive Care</p>
+              </div>
+            </div>
+            <div class="stars">★★★★★</div>
+            <p class="testimonial-text">
+              "After struggling with memory and focus issues, I found hope in the Neuro Cognitive Care program. The integrated approach combining ancient Ayurvedic wisdom with modern techniques gave me back my mental clarity."
+            </p>
+          </article>
+
+          <article class="testimonial-card">
+            <div class="testimonial-header">
+              <div class="testimonial-avatar">VJ</div>
+              <div class="testimonial-info">
+                <h3>Vikram Joshi</h3>
+                <p>Terminal Illness Care</p>
+              </div>
+            </div>
+            <div class="stars">★★★★★</div>
+            <p class="testimonial-text">
+              "I cannot express enough gratitude for the support and expert care I received. The team at Saukhyabharathi went above and beyond to ensure my comfort and wellbeing throughout my treatment."
+            </p>
+          </article>
+
+          <article class="testimonial-card">
+            <div class="testimonial-header">
+              <div class="testimonial-avatar">AP</div>
+              <div class="testimonial-info">
+                <h3>Anjali Patel</h3>
+                <p>Neuro Cognitive Care</p>
+              </div>
+            </div>
+            <div class="stars">★★★★★</div>
+            <p class="testimonial-text">
+              "The Neuro Cognitive Care program was a game-changer for me. Within weeks, I noticed significant improvements in my cognitive function and overall quality of life. Highly recommended!"
+            </p>
+          </article>
+
+          <article class="testimonial-card">
+            <div class="testimonial-header">
+              <div class="testimonial-avatar">RD</div>
+              <div class="testimonial-info">
+                <h3>Rajeshwari Dixit</h3>
+                <p>Terminal Illness Care</p>
+              </div>
+            </div>
+            <div class="stars">★★★★★</div>
+            <p class="testimonial-text">
+              "The holistic approach to care, combined with the expertise and empathy of the doctors, made all the difference in my health journey. I feel truly supported and heard."
+            </p>
+          </article>
+
+          <article class="testimonial-card">
+            <div class="testimonial-header">
+              <div class="testimonial-avatar">SK</div>
+              <div class="testimonial-info">
+                <h3>Suresh Kumar</h3>
+                <p>Terminal Illness Care</p>
+              </div>
+            </div>
+            <div class="stars">★★★★★</div>
+            <p class="testimonial-text">
+              "From my first consultation to ongoing care, the entire team demonstrated exceptional knowledge and genuine care. They listened to my concerns and worked collaboratively on my wellness plan."
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="cta-band">
+        <h3>Start Your Own Success Story</h3>
+        <p>Book a consultation and begin your journey toward wellness with our expert care team.</p>
+        <a href="consultation.html" class="btn">Book Appointment</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <div class="brand" style="color:#fff;">
+          <span class="logo" style="width:32px;height:32px;border-radius:8px;">
+            <img src="images/image.png" alt="Soukhya Bharathi logo" />
+          </span>
+          <span class="brand-name serif" style="color:#fff;font-size:24px;">Soukhya bharathi</span>
+        </div>
+        <p>
+          Discover the science of life. We provide authentic Ayurvedic
+          care for serious health conditions and long-term wellness.
+        </p>
+        <div class="socials">
+          <a href="#" aria-label="Twitter">𝕏</a>
+          <a href="#" aria-label="Instagram">◉</a>
+          <a href="#" aria-label="YouTube">▶</a>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="footer-title">Quick Links</h4>
+        <ul class="list">
+          <li><a href="index.html" style="color:inherit;text-decoration:none;">Home</a></li>
+          <li><a href="care.html" style="color:inherit;text-decoration:none;">Care</a></li>
+          <li><a href="services.html" style="color:inherit;text-decoration:none;">Treatments</a></li>
+          <li><a href="blog.html" style="color:inherit;text-decoration:none;">Research & Education</a></li>
+          <li><a href="about.html" style="color:inherit;text-decoration:none;">About SKBH</a></li>
+          <li><a href="success-stories.html" style="color:inherit;text-decoration:none;">Success Stories</a></li>
+          <li><a href="contact.html" style="color:inherit;text-decoration:none;">Contact</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-title">Care Programs</h4>
+        <ul class="list">
+          <li><a href="care.html" style="color:inherit;text-decoration:none;">Terminal Illness Care</a></li>
+          <li><a href="care.html" style="color:inherit;text-decoration:none;">Neuro Cognitive Care</a></li>
+          <li><a href="services.html" style="color:inherit;text-decoration:none;">Treatments</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-title">Visit Us</h4>
+        <ul class="list">
+          <li>📍 108 Lotus Valley Road, Kerala, India 682001</li>
+          <li>📞 +91 98765 43210</li>
+          <li>✉ namaste@ayurveda.wellness</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <span>© 2026 Saukhyabharathi. All rights reserved.</span>
+      <div>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const mobileNav = document.getElementById('mobileNav');
+
+    hamburgerBtn.addEventListener('click', () => {
+      hamburgerBtn.classList.toggle('active');
+      mobileNav.classList.toggle('active');
+    });
+
+    document.querySelectorAll('.mobile-nav a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburgerBtn.classList.remove('active');
+        mobileNav.classList.remove('active');
+      });
+    });
+  </script>
+</body>
+</html>
